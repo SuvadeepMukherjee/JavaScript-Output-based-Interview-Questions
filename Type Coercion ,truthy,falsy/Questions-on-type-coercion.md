@@ -207,3 +207,56 @@ By setting `hasName` equal to `name`, you set `hasName` equal to whatever value 
 `new Boolean(true)` returns an object wrapper, not the boolean value itself.
 
 `name.length` returns the length of the passed argument, not whether it's `true`.
+
+
+
+###### What's the value of output?
+
+```js
+// 🎉✨ This is my 100th question! ✨🎉
+
+const output = `${[] && 'Im'}possible!
+You should${'' && `n't`} see a therapist after so much JavaScript lol`;
+```
+
+- A: `possible! You should see a therapist after so much JavaScript lol`
+- B: `Impossible! You should see a therapist after so much JavaScript lol`
+- C: `possible! You shouldn't see a therapist after so much JavaScript lol`
+- D: `Impossible! You shouldn't see a therapist after so much JavaScript lol`
+
+**Answer**:
+
+Answer: B
+
+`[]` is a truthy value. With the `&&` operator, the right-hand value will be returned if the left-hand value is a truthy value. In this case, the left-hand value `[]` is a truthy value, so `"Im'` gets returned.
+
+`""` is a falsy value. If the left-hand value is falsy, nothing gets returned. `n't` doesn't get returned.
+
+
+
+###### What's the value of output?
+
+```js
+const one = false || {} || null;
+const two = null || false || '';
+const three = [] || 0 || true;
+
+console.log(one, two, three);
+```
+
+- A: `false` `null` `[]`
+- B: `null` `""` `true`
+- C: `{}` `""` `[]`
+- D: `null` `null` `true`
+
+**Answer**:
+
+Answer: C
+
+With the `||` operator, we can return the first truthy operand. If all values are falsy, the last operand gets returned.
+
+`(false || {} || null)`: the empty object `{}` is a truthy value. This is the first (and only) truthy value, which gets returned. `one` is equal to `{}`.
+
+`(null || false || "")`: all operands are falsy values. This means that the last operand, `""` gets returned. `two` is equal to `""`.
+
+`([] || 0 || "")`: the empty array`[]` is a truthy value. This is the first truthy value, which gets returned. `three` is equal to `[]`.

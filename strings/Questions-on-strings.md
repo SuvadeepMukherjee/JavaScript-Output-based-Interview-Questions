@@ -102,3 +102,20 @@ Answer: B
 In order to get a character at a specific index of a  string, you can use bracket notation. The first character in the string  has index 0, and so on. In this case, we want to get the element with  index 0, the character `"I'`, which gets logged.
 
 Note that this method is not supported in IE7 and below. In that case, use `.charAt()`.
+
+
+
+###### What's its value?
+
+```js
+console.log('❤️' === '❤️');
+```
+
+- A: `true`
+- B: `false`
+
+**Answer**:
+
+Answer: A
+
+Under the hood, emojis are unicodes. The unicodes for the heart emoji is `"U+2764 U+FE0F"`. These are always the same for the same emojis, so we're comparing two equal strings to each other, which returns true.

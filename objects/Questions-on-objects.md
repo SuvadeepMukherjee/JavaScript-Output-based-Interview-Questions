@@ -391,3 +391,200 @@ function Person(name) {
 ```
 
 ​    Calling a function constructor with `new` results in the creation of an instance of `Person`, `typeof` keyword returns `"object"` for an instance. `typeof member` returns `"object"`.
+
+
+
+
+
+###### What's the output?
+
+```js
+const person = {
+  name: 'Lydia',
+  age: 21,
+};
+
+for (const [x, y] of Object.entries(person)) {
+  console.log(x, y);
+}
+```
+
+- A: `name` `Lydia` and `age` `21`
+- B: `["name", "Lydia"]` and `["age", 21]`
+- C: `["name", "age"]` and `undefined`
+- D: `Error`
+
+**Answer**:
+
+Answer: A
+
+
+
+`Object.entries(person)` returns an array of nested arrays, containing the keys and objects:
+
+`[ [ 'name', 'Lydia' ], [ 'age', 21 ] ]`
+
+Using the `for-of` loop, we can iterate over  each element in the array, the subarrays in this case. We can  destructure the subarrays instantly in the for-of loop, using `const [x, y]`. `x` is equal to the first element in the subarray, `y` is equal to the second element in the subarray.
+
+The first subarray is `[ "name", "Lydia" ]`, with `x` equal to `"name"`, and `y` equal to `"Lydia"`, which get logged. The second subarray is `[ "age", 21 ]`, with `x` equal to `"age"`, and `y` equal to `21`, which get logged.
+
+
+
+
+
+###### What's the output?
+
+```js
+const info = {
+  [Symbol('a')]: 'b',
+};
+
+console.log(info);
+console.log(Object.keys(info));    
+```
+
+- A: `{Symbol('a'): 'b'}` and `["{Symbol('a')"]`
+- B: `{}` and `[]`
+- C: `{ a: "b" }` and `["a"]`
+- D: `{Symbol('a'): 'b'}` and `[]`
+
+**Answer**:
+
+Answer: D
+
+A Symbol is not *enumerable*. The Object.keys method returns all *enumerable* key properties on an object. The Symbol won't be visible, and an empty  array is returned. When logging the entire object, all properties will  be visible, even non-enumerable ones.
+
+This is one of the many qualities of a symbol: besides  representing an entirely unique value (which prevents accidental name  collision on objects, for example when working with 2 libraries that  want to add properties to the same object), you can also "hide"  properties on objects this way (although not entirely. You can still  access symbols using the `Object.getOwnPropertySymbols()` method).
+
+
+
+###### What's its value?
+
+```js
+function compareMembers(person1, person2 = person) {
+  if (person1 !== person2) {
+    console.log('Not the same!');
+  } else {
+    console.log('They are the same!');
+  }
+}
+
+const person = { name: 'Lydia' };
+
+compareMembers(person);
+```
+
+- A: `Not the same!`
+- B: `They are the same!`
+- C: `ReferenceError`
+- D: `SyntaxError`
+
+**Answer**:
+
+Answer: B
+
+Objects are passed by reference. When we check objects for strict equality (`===`), we're comparing their references.
+
+We set the default value for `person2` equal to the `person` object, and passed the `person` object as the value for `person1`.
+
+This means that both values have a reference to the same spot in memory, thus they are equal.
+
+The code block in the `else` statement gets run, and `They are the same!` gets logged.
+
+
+
+
+
+###### What's its value?
+
+```js
+const colorConfig = {
+  red: true,
+  blue: false,
+  green: true,
+  black: true,
+  yellow: false,
+};
+
+const colors = ['pink', 'red', 'blue'];
+
+console.log(colorConfig.colors[1]);
+```
+
+- A: `true`
+- B: `false`
+- C: `undefined`
+- D: `TypeError`
+
+**Answer**:
+
+Answer: D
+
+In JavaScript, we have two ways to access properties on an object: bracket notation, or dot notation. In this example, we use dot  notation (`colorConfig.colors`) instead of bracket notation (`colorConfig["colors"]`).
+
+With dot notation, JavaScript tries to find the property  on the object with that exact name. In this example, JavaScript tries to find a property called `colors` on the `colorConfig` object. There is no property called `colors`, so this returns `undefined`. Then, we try to access the value of the first element by using `[1]`. We cannot do this on a value that's `undefined`, so it throws a `TypeError`: `Cannot read property '1' of undefined`.
+
+JavaScript interprets (or unboxes) statements. When we use bracket notation, it sees the first opening bracket `[` and keeps going until it finds the closing bracket `]`. Only then, it will evaluate the statement. If we would've used `colorConfig[colors[1]]`, it would have returned the value of the `red` property on the `colorConfig` object.
+
+
+
+
+
+###### What's the output?
+
+```js
+const food = ['🍕', '🍫', '🥑', '🍔'];
+const info = { favoriteFood: food[0] };
+
+info.favoriteFood = '🍝';
+
+console.log(food);
+```
+
+- A: `['🍕', '🍫', '🥑', '🍔']`
+- B: `['🍝', '🍫', '🥑', '🍔']`
+- C: `['🍝', '🍕', '🍫', '🥑', '🍔']`
+- D: `ReferenceError`
+
+**Answer**:
+
+Answer: A
+
+We set the value of the `favoriteFood` property on the `info` object equal to the string with the pizza emoji, `'🍕'`. A string is a primitive data type. In JavaScript, primitive data types don't interact by reference.
+
+In JavaScript, primitive data types (everything that's not an object) interact by *value*. In this case, we set the value of the `favoriteFood` property on the `info` object equal to the value of the first element in the `food` array, the string with the pizza emoji in this case (`'🍕'`). A string is a primitive data type, and interact by value (see my [blogpost](https://www.theavocoder.com/complete-javascript/2018/12/21/by-value-vs-by-reference) if you're interested in learning more)
+
+Then, we change the value of the `favoriteFood` property on the `info` object. The `food` array hasn't changed, since the value of `favoriteFood` was merely a *copy* of the value of the first element in the array, and doesn't have a reference to the same spot in memory as the element on `food[0]`. When we log food, it's still the original array, `['🍕', '🍫', '🥑', '🍔']`.
+
+
+
+###### What does this method do?
+
+```js
+JSON.parse();
+```
+
+- A: Parses JSON to a JavaScript value
+- B: Parses a JavaScript object to JSON
+- C: Parses any JavaScript value to JSON
+- D: Parses JSON to a JavaScript object only
+
+**Answer**:
+
+Answer: A
+
+With the `JSON.parse()` method, we can parse JSON string to a JavaScript value.
+
+```js
+// Stringifying a number into valid JSON, then parsing the JSON string to a JavaScript value:
+const jsonNumber = JSON.stringify(4); // '4'
+JSON.parse(jsonNumber); // 4
+
+// Stringifying an array value into valid JSON, then parsing the JSON string to a JavaScript value:
+const jsonArray = JSON.stringify([1, 2, 3]); // '[1, 2, 3]'
+JSON.parse(jsonArray); // [1, 2, 3]
+
+// Stringifying an object  into valid JSON, then parsing the JSON string to a JavaScript value:
+const jsonArray = JSON.stringify({ name: 'Lydia' }); // '{"name":"Lydia"}'
+JSON.parse(jsonArray); // { name: 'Lydia' }
+```
