@@ -92,3 +92,203 @@ When testing equality, primitives are compared by their *value*, while objects a
 The two objects that we are comparing don't have that: the object we passed as a parameter refers to a different location in  memory than the object we used in order to check equality.
 
 This is why both `{ age: 18 } === { age: 18 }` and `{ age: 18 } == { age: 18 }` return `false`.
+
+
+
+###### What's the output?
+
+```js
+const obj = { 1: 'a', 2: 'b', 3: 'c' };
+const set = new Set([1, 2, 3, 4, 5]);
+
+obj.hasOwnProperty('1');
+obj.hasOwnProperty(1);
+set.has('1');
+set.has(1);
+```
+
+- A: `false` `true` `false` `true`
+- B: `false` `true` `true` `true`
+- C: `true` `true` `false` `true`
+- D: `true` `true` `true` `true`
+
+**Answer**:
+
+Answer: C
+
+All object keys (excluding Symbols) are strings under the hood, even if you don't type it yourself as a string. This is why `obj.hasOwnProperty('1')` also returns true.
+
+It doesn't work that way for a set. There is no `'1'` in our set: `set.has('1')` returns `false`. It has the numeric type `1`, `set.has(1)` returns `true`.
+
+
+
+
+
+###### What's the output?
+
+```js
+const obj = { a: 'one', b: 'two', a: 'three' };
+console.log(obj);
+```
+
+- A: `{ a: "one", b: "two" }`
+- B: `{ b: "two", a: "three" }`
+- C: `{ a: "three", b: "two" }`
+- D: `SyntaxError`
+
+**Answer**:
+
+Answer: C
+
+If you have two keys with the same name, the key will be  replaced. It will still be in its first position, but with the last  specified value.
+
+
+
+###### What's the output?
+
+```js
+const a = {};
+const b = { key: 'b' };
+const c = { key: 'c' };
+
+a[b] = 123;
+a[c] = 456;
+
+console.log(a[b]);
+```
+
+- A: `123`
+- B: `456`
+- C: `undefined`
+- D: `ReferenceError`
+
+**Answer**:
+
+Answer: B
+
+Object keys are automatically converted into strings. We are trying to set an object as a key to object `a`, with the value of `123`.
+
+However, when we stringify an object, it becomes `"[object Object]"`. So what we are saying here, is that `a["[object Object]"] = 123`. Then, we can try to do the same again. `c` is another object that we are implicitly stringifying. So then, `a["[object Object]"] = 456`.
+
+Then, we log `a[b]`, which is actually `a["[object Object]"]`. We just set that to `456`, so it returns `456`.
+
+
+
+
+
+###### What's the output?
+
+```js
+let person = { name: 'Lydia' };
+const members = [person];
+person = null;
+
+console.log(members);
+```
+
+- A: `null`
+- B: `[null]`
+- C: `[{}]`
+- D: `[{ name: "Lydia" }]`
+
+**Answer**:
+
+Answer: D
+
+First, we declare a variable `person` with the value of an object that has a `name` property.
+
+![obj1](../assets/obj1.png)
+
+Then, we declare a variable called `members`. We set the first element of that array equal to the value of the `person` variable. Objects interact by *reference* when setting them equal to each other. When you assign a reference from one variable to another, you make a *copy* of that reference. (note that they don't have the *same* reference!)
+
+![obj2](../assets/obj2.png)
+
+Then, we set the variable `person` equal to `null`.
+
+![obj3](../assets/obj3.png)
+
+We are only modifying the value of the `person` variable, and not the first element in the array, since that element has a different  (copied) reference to the object. The first element in `members` still holds its reference to the original object. When we log the `members` array, the first element still holds the value of the object, which gets logged.
+
+
+
+
+
+###### What's the output?
+
+```js
+const person = {
+  name: 'Lydia',
+  age: 21,
+};
+
+for (const item in person) {
+  console.log(item);
+}
+```
+
+- A: `{ name: "Lydia" }, { age: 21 }`
+- B: `"name", "age"`
+- C: `"Lydia", 21`
+- D: `["name", "Lydia"], ["age", 21]`
+
+**Answer**:
+
+Answer: B
+
+With a `for-in` loop, we can iterate through object keys, in this case `name` and `age`. Under the hood, object keys are strings (if they're not a Symbol). On every loop, we set the value of `item` equal to the current key it’s iterating over. First, `item` is equal to `name`, and gets logged. Then, `item` is equal to `age`, which gets logged.
+
+
+
+###### What's the output?
+
+```js
+const person = { name: 'Lydia' };
+
+Object.defineProperty(person, 'age', { value: 21 });
+
+console.log(person);
+console.log(Object.keys(person));
+```
+
+- A: `{ name: "Lydia", age: 21 }`, `["name", "age"]`
+- B: `{ name: "Lydia", age: 21 }`, `["name"]`
+- C: `{ name: "Lydia"}`, `["name", "age"]`
+- D: `{ name: "Lydia"}`, `["age"]`
+
+**Answer**:
+
+Answer: B
+
+With the `defineProperty` method, we can add new properties to an object, or modify existing ones. When we add a property to an object using the `defineProperty` method, they are by default *not enumerable*. The `Object.keys` method returns all *enumerable* property names from an object, in this case only `"name"`.
+
+Properties added using the `defineProperty` method are immutable by default. You can override this behavior using the `writable`, `configurable` and `enumerable` properties. This way, the `defineProperty` method gives you a lot more control over the properties you're adding to an object.
+
+
+
+###### What's the output?
+
+```js
+const settings = {
+  username: 'lydiahallie',
+  level: 19,
+  health: 90,
+};
+
+const data = JSON.stringify(settings, ['level', 'health']);
+console.log(data);
+```
+
+- A: `"{"level":19, "health":90}"`
+- B: `"{"username": "lydiahallie"}"`
+- C: `"["level", "health"]"`
+- D: `"{"username": "lydiahallie", "level":19, "health":90}"`
+
+**Answer**:
+
+Answer: A
+
+The second argument of `JSON.stringify` is the *replacer*. The replacer can either be a function or an array, and lets you control what and how the values should be stringified.
+
+If the replacer is an *array*, only the property  names included in the array will be added to the JSON string. In this  case, only the properties with the names `"level"` and `"health"` are included, `"username"` is excluded. `data` is now equal to `"{"level":19, "health":90}"`.
+
+If the replacer is a *function*, this function gets called on every property in the object you're stringifying. The value  returned from this function will be the value of the property when it's  added to the JSON string. If the value is `undefined`, this property is excluded from the JSON string.
