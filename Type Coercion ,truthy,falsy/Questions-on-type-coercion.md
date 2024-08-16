@@ -178,3 +178,32 @@ console.log(Symbol('foo') === Symbol('foo'));
 Answer: A
 
 Every Symbol is entirely unique. The purpose of the  argument passed to the Symbol is to give the Symbol a description. The  value of the Symbol is not dependent on the passed argument. As we test  equality, we are creating two entirely new symbols: the first `Symbol('foo')`, and the second `Symbol('foo')`. These two values are unique and not equal to each other, `Symbol('foo') === Symbol('foo')` returns `false`.
+
+
+
+
+
+###### Which option is a way to set `hasName` equal to `true`, provided you cannot pass `true` as an argument?
+
+```js
+function getName(name) {
+  const hasName = //
+}
+```
+
+- A: `!!name`
+- B: `name`
+- C: `new Boolean(name)`
+- D: `name.length`
+
+**Answer**:
+
+Answer: A
+
+With `!!name`, we determine whether the value of `name` is truthy or falsy. If the name is truthy, which we want to test for, `!name` returns `false`. `!false` (which is what `!!name` practically is) returns `true`.
+
+By setting `hasName` equal to `name`, you set `hasName` equal to whatever value you passed to the `getName` function, not the boolean value `true`.
+
+`new Boolean(true)` returns an object wrapper, not the boolean value itself.
+
+`name.length` returns the length of the passed argument, not whether it's `true`.

@@ -23,3 +23,46 @@ Answer: C
 Because of the event queue in JavaScript, the `setTimeout` callback function is called *after* the loop has been executed. Since the variable `i` in the first loop was declared using the `var` keyword, this value was global. During the loop, we incremented the value of `i` by `1` each time, using the unary operator `++`. By the time the `setTimeout` callback function was invoked, `i` was equal to `3` in the first example.
 
 In the second loop, the variable `i` was declared using the `let` keyword: variables declared with the `let` (and `const`) keyword are block-scoped (a block is anything between `{ }`). During each iteration, `i` will have a new value, and each value is scoped inside the loop.
+
+
+
+###### What is the output?
+
+```js
+const add = () => {
+  const cache = {};
+  return num => {
+    if (num in cache) {
+      return `From cache! ${cache[num]}`;
+    } else {
+      const result = num + 10;
+      cache[num] = result;
+      return `Calculated! ${result}`;
+    }
+  };
+};
+
+const addFunction = add();
+console.log(addFunction(10));
+console.log(addFunction(10));
+console.log(addFunction(5 * 2));
+```
+
+- A: `Calculated! 20` `Calculated! 20` `Calculated! 20`
+- B: `Calculated! 20` `From cache! 20` `Calculated! 20`
+- C: `Calculated! 20` `From cache! 20` `From cache! 20`
+- D: `Calculated! 20` `From cache! 20` `Error`
+
+**Answer**:
+
+Answer: C
+
+The `add` function is a *memoized*  function. With memoization, we can cache the results of a function in  order to speed up its execution. In this case, we create a `cache` object that stores the previously returned values.
+
+If we call the `addFunction` function again  with the same argument, it first checks whether it has already gotten  that value in its cache. If that's the case, the cache value will be  returned, which saves execution time. Otherwise, if it's not cached, it  will calculate the value and store it afterward.
+
+We call the `addFunction` function three times with the same value: on the first invocation, the value of the function when `num` is equal to `10` isn't cached yet. The condition of the if-statement `num in cache` returns `false`, and the else block gets executed: `Calculated! 20` gets logged, and the value of the result gets added to the cache object. `cache` now looks like `{ 10: 20 }`.
+
+The second time, the `cache` object contains the value that gets returned for `10`. The condition of the if-statement `num in cache` returns `true`, and `'From cache! 20'` gets logged.
+
+The third time, we pass `5 * 2` to the function which gets evaluated to `10`. The `cache` object contains the value that gets returned for `10`. The condition of the if-statement `num in cache` returns `true`, and `'From cache! 20'` gets logged.

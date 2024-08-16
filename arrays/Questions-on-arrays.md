@@ -103,3 +103,107 @@ On the first call, the accumulator (`x`) is `1`, and the current value (`y`) is 
 If you don't return a value from a function, it returns `undefined`. On the next call, the accumulator is `undefined`, and the current value is `3`. `undefined` and `3` get logged.
 
 On the fourth call, we again don't return from the callback function. The accumulator is again `undefined`, and the current value is `4`. `undefined` and `4` get logged.
+
+
+
+###### 74. What's the output?
+
+```js
+function addToList(item, list) {
+  return list.push(item);
+}
+
+const result = addToList('apple', ['banana']);
+console.log(result);
+```
+
+- A: `['apple', 'banana']`
+- B: `2`
+- C: `true`
+- D: `undefined`
+
+**Answer**:
+
+Answer: B
+
+The `.push()` method returns the *length* of the new array! Previously, the array contained one element (the string `"banana"`) and had a length of `1`. After adding the string `"apple"` to the array, the array contains two elements, and has a length of `2`. This gets returned from the `addToList` function.
+
+The `push` method modifies the original array. If you wanted to return the *array* from the function rather than the *length of the array*, you should have returned `list` after pushing `item` to it.
+
+
+
+###### What is the output?
+
+```js
+const myLifeSummedUp = ['☕', '💻', '🍷', '🍫'];
+
+for (let item in myLifeSummedUp) {
+  console.log(item);
+}
+
+for (let item of myLifeSummedUp) {
+  console.log(item);
+}
+```
+
+- A: `0` `1` `2` `3` and `"☕"` `"💻"` `"🍷"` `"🍫"`
+- B: `"☕"` `"💻"` `"🍷"` `"🍫"` and `"☕"` `"💻"` `"🍷"` `"🍫"`
+- C: `"☕"` `"💻"` `"🍷"` `"🍫"` and `0` `1` `2` `3`
+- D: `0` `1` `2` `3` and `{0: "☕", 1: "💻", 2: "🍷", 3: "🍫"}`
+
+**Answer**:
+
+Answer: A
+
+With a *for-in* loop, we can iterate over **enumerable** properties. In an array, the enumerable properties are the "keys" of  array elements, which are actually their indexes. You could see an array as:
+
+`{0: "☕", 1: "💻", 2: "🍷", 3: "🍫"}`
+
+Where the keys are the enumerable properties. `0` `1` `2` `3` get logged.
+
+With a *for-of* loop, we can iterate over **iterables**. An array is an iterable. When we iterate over the array, the variable  "item" is equal to the element it's currently iterating over, `"☕"` `"💻"` `"🍷"` `"🍫"` get logged.
+
+
+
+###### What is the output?
+
+```js
+const list = [1 + 2, 1 * 2, 1 / 2];
+console.log(list);
+```
+
+- A: `["1 + 2", "1 * 2", "1 / 2"]`
+- B: `["12", 2, 0.5]`
+- C: `[3, 2, 0.5]`
+- D: `[1, 1, 1]`
+
+**Answer**:
+
+Answer: C
+
+Array elements can hold any value. Numbers, strings,  objects, other arrays, null, boolean values, undefined, and other  expressions such as dates, functions, and calculations.
+
+The element will be equal to the returned value. `1 + 2` returns `3`, `1 * 2` returns `2`, and `1 / 2` returns `0.5`.
+
+
+
+###### What's the output?
+
+```js
+let newList = [1, 2, 3].push(4);
+
+console.log(newList.push(5));
+```
+
+- A: `[1, 2, 3, 4, 5]`
+- B: `[1, 2, 3, 5]`
+- C: `[1, 2, 3, 4]`
+- D: `Error`
+
+**Answer**:
+
+Answer: D
+
+The `.push` method returns the *new length* of the array, not the array itself! By setting `newList` equal to `[1, 2, 3].push(4)`, we set `newList` equal to the new length of the array: `4`.
+
+Then, we try to use the `.push` method on `newList`. Since `newList` is the numerical value `4`, we cannot use the `.push` method: a TypeError is thrown.

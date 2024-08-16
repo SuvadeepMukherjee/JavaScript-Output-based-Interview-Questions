@@ -44,3 +44,61 @@ console.log('🥑' + '💻');
 Answer: A
 
 With the `+` operator, you can concatenate strings. In this case, we are concatenating the string `"🥑"` with the string `"💻"`, resulting in `"🥑💻"`.
+
+
+
+
+
+###### What's the output?
+
+```js
+console.log(String.raw`Hello\nworld`);
+```
+
+- A: `Hello world!`
+- B: `Hello` 
+     `world`
+- C: `Hello\nworld`
+- D: `Hello\n` 
+      `world`
+
+**Answer**:
+
+Answer: C
+
+`String.raw` returns a string where the escapes (`\n`, `\v`, `\t` etc.) are ignored! Backslashes can be an issue since you could end up with something like:
+
+`const path = `C:\Documents\Projects\table.html``
+
+Which would result in:
+
+`"C:DocumentsProjects able.html"`
+
+With `String.raw`, it would simply ignore the escape and print:
+
+`C:\Documents\Projects\table.html`
+
+In this case, the string is `Hello\nworld`, which gets logged.
+
+
+
+
+
+###### What's the output?
+
+```js
+console.log('I want pizza'[0]);
+```
+
+- A: `"""`
+- B: `"I"`
+- C: `SyntaxError`
+- D: `undefined`
+
+**Answer**:
+
+Answer: B
+
+In order to get a character at a specific index of a  string, you can use bracket notation. The first character in the string  has index 0, and so on. In this case, we want to get the element with  index 0, the character `"I'`, which gets logged.
+
+Note that this method is not supported in IE7 and below. In that case, use `.charAt()`.

@@ -292,3 +292,102 @@ The second argument of `JSON.stringify` is the *replacer*. The replacer can eith
 If the replacer is an *array*, only the property  names included in the array will be added to the JSON string. In this  case, only the properties with the names `"level"` and `"health"` are included, `"username"` is excluded. `data` is now equal to `"{"level":19, "health":90}"`.
 
 If the replacer is a *function*, this function gets called on every property in the object you're stringifying. The value  returned from this function will be the value of the property when it's  added to the JSON string. If the value is `undefined`, this property is excluded from the JSON string.
+
+
+
+
+
+###### What's the output?
+
+```js
+const box = { x: 10, y: 20 };
+
+Object.freeze(box);
+
+const shape = box;
+shape.x = 100;
+
+console.log(shape);
+```
+
+- A: `{ x: 100, y: 20 }`
+- B: `{ x: 10, y: 20 }`
+- C: `{ x: 100 }`
+- D: `ReferenceError`
+
+**Answer**:
+
+Answer: B
+
+`Object.freeze` makes it impossible to add, remove, or modify properties of an object (unless the property's value is another object).
+
+When we create the variable `shape` and set it equal to the frozen object `box`, `shape` also refers to a frozen object. You can check whether an object is frozen by using `Object.isFrozen`. In this case, `Object.isFrozen(shape)` would return true, since the variable `shape` has a reference to a frozen object.
+
+Since `shape` is frozen, and since the value of `x` is not an object, we cannot modify the property `x`. `x` is still equal to `10`, and `{ x: 10, y: 20 }` gets logged.
+
+
+
+###### What is the output?
+
+```js
+const person = {
+  name: 'Lydia',
+  age: 21,
+};
+
+let city = person.city;
+city = 'Amsterdam';
+
+console.log(person);
+```
+
+- A: `{ name: "Lydia", age: 21 }`
+- B: `{ name: "Lydia", age: 21, city: "Amsterdam" }`
+- C: `{ name: "Lydia", age: 21, city: undefined }`
+- D: `"Amsterdam"`
+
+**Answer**:
+
+Answer: A
+
+We set the variable `city` equal to the value of the property called `city` on the `person` object. There is no property on this object called `city`, so the variable `city` has the value of `undefined`.
+
+Note that we are *not* referencing the `person` object itself! We simply set the variable `city` equal to the current value of the `city` property on the `person` object.
+
+Then, we set `city` equal to the string `"Amsterdam"`. This doesn't change the person object: there is no reference to that object.
+
+When logging the `person` object, the unmodified object gets returned.
+
+
+
+###### What's the output?
+
+```js
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+const member = new Person('John');
+console.log(typeof member);
+```
+
+- A: `"class"`
+- B: `"function"`
+- C: `"object"`
+- D: `"string"`
+
+**Answer**:
+
+Answer: C
+
+Classes are syntactical sugar for function constructors. The equivalent of the `Person` class as a function constructor would be:
+
+```js
+function Person(name) {
+  this.name = name;
+}
+```
+
+​    Calling a function constructor with `new` results in the creation of an instance of `Person`, `typeof` keyword returns `"object"` for an instance. `typeof member` returns `"object"`.
