@@ -87,3 +87,59 @@ Answer: A
 With the `import * as name` syntax, we import *all exports* from the `module.js` file into the `index.js` file as a new object called `data` is created. In the `module.js` file, there are two exports: the default export, and a named export. The default export is a function that returns the string `"Hello World"`, and the named export is a variable called `name` which has the value of the string `"Lydia"`.
 
 The `data` object has a `default` property for the default export, other properties have the names of the named exports and their corresponding values.
+
+
+
+
+
+###### How can we invoke `sum` in `sum.js` from `index.js?`
+
+```js
+// sum.js
+export default function sum(x) {
+  return x + x;
+}
+
+// index.js
+import * as sum from './sum';
+```
+
+- A: `sum(4)`
+- B: `sum.sum(4)`
+- C: `sum.default(4)`
+- D: Default aren't imported with `*`, only named exports
+
+**Answer**:
+
+Answer: C
+
+With the asterisk `*`, we import all exported values from that file, both default and named. If we had the following file:
+
+```js
+// info.js
+export const name = 'Lydia';
+export const age = 21;
+export default 'I love JavaScript';
+
+// index.js
+import * as info from './info';
+console.log(info);
+```
+
+​    The following would get logged:
+
+```
+{
+  default: "I love JavaScript",
+  name: "Lydia",
+  age: 21
+}
+```
+
+​    For the `sum` example, it means that the imported value `sum` looks like this:
+
+```js
+{ default: function sum(x) { return x + x } }
+```
+
+​    We can invoke this function, by calling `sum.default`
