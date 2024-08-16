@@ -588,3 +588,93 @@ JSON.parse(jsonArray); // [1, 2, 3]
 const jsonArray = JSON.stringify({ name: 'Lydia' }); // '{"name":"Lydia"}'
 JSON.parse(jsonArray); // { name: 'Lydia' }
 ```
+
+
+
+
+
+###### What will happen?
+
+```js
+let config = {
+  alert: setInterval(() => {
+    console.log('Alert!');
+  }, 1000),
+};
+
+config = null;
+```
+
+- A: The `setInterval` callback won't be invoked
+- B: The `setInterval` callback gets invoked once
+- C: The `setInterval` callback will still be called every second
+- D: We never invoked `config.alert()`, config is `null`
+
+**Answer**:
+
+Answer: C
+
+Normally when we set objects equal to `null`, those objects get *garbage collected* as there is no reference anymore to that object. However, since the callback function within `setInterval` is an arrow function (thus bound to the `config` object), the callback function still holds a reference to the `config` object. As long as there is a reference, the object won't get garbage collected. Since this is an interval, setting `config` to `null` or `delete`-ing `config.alert` won't garbage-collect the interval, so the interval will still be called. It should be cleared with `clearInterval(config.alert)` to remove it from memory. Since it was not cleared, the `setInterval` callback function will still get invoked every 1000ms (1s).
+
+
+
+###### What's the output?
+
+```js
+const person = {
+  name: 'Lydia',
+  age: 21,
+};
+
+const changeAge = (x = { ...person }) => (x.age += 1);
+const changeAgeAndName = (x = { ...person }) => {
+  x.age += 1;
+  x.name = 'Sarah';
+};
+
+changeAge(person);
+changeAgeAndName();
+
+console.log(person);
+```
+
+- A: `{name: "Sarah", age: 22}`
+- B: `{name: "Sarah", age: 23}`
+- C: `{name: "Lydia", age: 22}`
+- D: `{name: "Lydia", age: 23}`
+
+**Answer**:
+
+Answer: C
+
+Both the `changeAge` and `changeAgeAndName` functions have a default parameter, namely a *newly* created object `{ ...person }`. This object has copies of all the key/values in the `person` object.
+
+First, we invoke the `changeAge` function and pass the `person` object as its argument. This function increases the value of the `age` property by 1. `person` is now `{ name: "Lydia", age: 22 }`.
+
+Then, we invoke the `changeAgeAndName` function, however we don't pass a parameter. Instead, the value of `x` is equal to a *new* object: `{ ...person }`. Since it's a new object, it doesn't affect the values of the properties on the `person` object. `person` is still equal to `{ name: "Lydia", age: 22 }`.
+
+
+
+###### What's the output?
+
+```js
+const config = {
+  languages: [],
+  set language(lang) {
+    return this.languages.push(lang);
+  },
+};
+
+console.log(config.language);
+```
+
+- A: `function language(lang) { this.languages.push(lang }`
+- B: `0`
+- C: `[]`
+- D: `undefined`
+
+**Answer**:
+
+Answer: D
+
+The `language` method is a `setter`. Setters don't hold an actual value, their purpose is to *modify* properties. When calling a `setter` method, `undefined` gets returned.

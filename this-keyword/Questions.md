@@ -64,3 +64,41 @@ Answer: B
 The value of the `this` keyword is dependent on where you use it. In a **method**, like the `getStatus` method, the `this` keyword refers to *the object that the method belongs to*. The method belongs to the `data` object, so `this` refers to the `data` object. When we log `this.status`, the `status` property on the `data` object gets logged, which is `"🥑"`.
 
 With the `call` method, we can change the object to which the `this` keyword refers. In **functions**, the `this` keyword refers to the *the object that the function belongs to*. We declared the `setTimeout` function on the *global object*, so within the `setTimeout` function, the `this` keyword refers to the *global object*. On the global object, there is a variable called *status* with the value of `"😎"`. When logging `this.status`, `"😎"` gets logged.
+
+
+
+
+
+###### What's the output?
+
+```js
+const person = {
+  firstName: 'Lydia',
+  lastName: 'Hallie',
+  pet: {
+    name: 'Mara',
+    breed: 'Dutch Tulip Hound',
+  },
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+};
+
+console.log(person.pet?.name);
+console.log(person.pet?.family?.name);
+console.log(person.getFullName?.());
+console.log(member.getLastName?.());
+```
+
+- A: `undefined` `undefined` `undefined` `undefined`
+- B: `Mara` `undefined` `Lydia Hallie` `ReferenceError`
+- C: `Mara` `null` `Lydia Hallie` `null`
+- D: `null` `ReferenceError` `null` `ReferenceError`
+
+**Answer**:
+
+Answer: B
+
+With the optional chaining operator `?.`, we no longer have to explicitly check whether the deeper nested values are  valid or not. If we're trying to access a property on an `undefined` or `null` value (*nullish*), the expression short-circuits and returns `undefined`.
+
+`person.pet?.name`: `person` has a property named `pet`: `person.pet` is not nullish. It has a property called `name`, and returns `Mara`. `person.pet?.family?.name`: `person` has a property named `pet`: `person.pet` is not nullish. `pet` does *not* have a property called `family`, `person.pet.family` is nullish. The expression returns `undefined`. `person.getFullName?.()`: `person` has a property named `getFullName`: `person.getFullName()` is not nullish and can get invoked, which returns `Lydia Hallie`. `member.getLastName?.()`: variable `member` is non-existent therefore a `ReferenceError` gets thrown!
