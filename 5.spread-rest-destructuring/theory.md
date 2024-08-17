@@ -142,3 +142,24 @@ console.log(fName, lname, village);
 **Answer**:
 
 The output will be `Suvadeep Mukherjee khatra`
+
+#### Q10:What will be logged to the console ? 
+
+```js
+const { firstName, lastName, town } = {
+
+  firstName: "Suvadeep",
+
+  lastName: "Mukherjee",
+
+  town: "Khatra",
+
+};
+
+console.log(firstName, lastName, town);
+```
+
+**Answer**:
+
+The output will be `Suvadeep Mukherjee Khatra`
+
