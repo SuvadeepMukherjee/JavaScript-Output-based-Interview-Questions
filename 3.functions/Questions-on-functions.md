@@ -1,6 +1,6 @@
 ## Questions on functions
 
-###### What happens when we do this?
+#### Q1:What happens when we do this?
 
 ```js
 function bark() {
@@ -23,9 +23,7 @@ This is possible in JavaScript, because functions are objects! (Everything besid
 
 A function is a special type of object. The code you write yourself isn't the actual function. The function is an object with  properties. This property is invocable.
 
-
-
-###### What's the output?
+#### Q2:What's the output?
 
 ```js
 function getInfo(member, year) {
@@ -56,9 +54,7 @@ The variable `birthYear` has a reference to the value `"1997"`. The argument `ye
 
 The value of `person` is an object. The argument `member` has a (copied) reference to the *same* object. When we modify a property of the object `member` has a reference to, the value of `person` will also be modified, since they both have a reference to the same object. `person`'s `name` property is now equal to the value `"Lydia"`
 
-
-
-###### What's the output?
+#### Q3:What's the output?
 
 ```js
 const value = { number: 10 };
@@ -92,9 +88,7 @@ The third time we invoke multiply, we do pass an argument: the object called `va
 
 The fourth time, we pass the `value` object again. `x.number` was previously modified to `20`, so `x.number *= 2` logs `40`.
 
-
-
-###### Is this a pure function?
+#### Q4:Is this a pure function?
 
 ```js
 function sum(a, b) {
@@ -113,11 +107,7 @@ A pure function is a function that *always* returns the same result, if the same
 
 The `sum` function always returns the same result. If we pass `1` and `2`, it will *always* return `3` without side effects. If we pass `5` and `10`, it will *always* return `15`, and so on. This is the definition of a pure function.
 
-
-
-
-
-###### What is the output?
+#### Q5:What is the output?
 
 ```js
 function sayHi(name) {
@@ -144,11 +134,7 @@ In ES6, we can overwrite this default `undefined` value with default parameters.
 
 In this case, if we didn't pass a value or if we passed `undefined`, `name` would always be equal to the string `Lydia`
 
-
-
-
-
-###### What's the output?
+#### Q6:What's the output?
 
 ```js
 function sum(num1, num2 = num1) {
@@ -171,11 +157,7 @@ You can set a default parameter's value equal to another parameter of the functi
 
 If you're trying to set a default parameter's value equal to a parameter that is defined *after* (to the right), the parameter's value hasn't been initialized yet, which will throw an error.
 
-
-
-
-
-###### What's the output?
+#### Q7:What's the output?
 
 ```js
 const add = x => x + x;
@@ -201,9 +183,7 @@ First, we invoked `myFunc()` without passing any arguments. Since we didn't pass
 
 Then, we invoked `myFunc(3)` and passed the value `3` as the value for the argument `num`. We didn't pass an argument for `value`. Since we didn't pass a value for the `value` argument, it got the default value: the returned value of the `add` function. To `add`, we pass `num`, which has the value of `3`. `add` returns `6`, which is the value of `value`.
 
-
-
-###### What's the output?
+#### Q8:What's the output?
 
 ```js
 const person = {
@@ -242,11 +222,7 @@ Last, we invoke the `addHobby` function, and pass `"baking"` as the value for `h
 
 After pushing `dancing` and `baking`, the value of `person.hobbies` is `["coding", "dancing", "baking"]`
 
-
-
-
-
-**What will be the output**
+#### Q9:**What will be the output**
 
 ```js
 function sum(a=5, b=7){
