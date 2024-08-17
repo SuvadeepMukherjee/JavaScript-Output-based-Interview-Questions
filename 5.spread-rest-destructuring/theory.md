@@ -182,3 +182,40 @@ console.log(surName);
 **Answer**:
 
 The output will be `Mukherjee`
+
+#### Q12:What will be logged to the console ? 
+
+```js
+let firstName, lastName, website;
+
+({ firstName, lastName, town } = {
+  firstName: "Suvadeep",
+  lastName: "Mukherjee",
+  town: "Khatra",
+});
+
+console.log(firstName, lastName, town);
+
+```
+
+**Answer**:The output will be `Suvadeep Mukherjee Khatra`
+
+#### Q13: What will be logged to the console ? 
+
+```js
+const { firstName, ...otherInfo } = {
+
+  firstName: "Suavdeep",
+
+  lastName: "Mukherjee",
+
+  town: "Khatra",
+
+};
+
+console.log(firstName,otherInfo);
+```
+
+**Answer**:
+
+The output will be `Suavdeep { lastName: 'Mukherjee', town: 'Khatra' }`
