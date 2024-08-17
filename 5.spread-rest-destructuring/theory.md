@@ -114,3 +114,31 @@ function getUserBio([firstName] = []) {
 **Answer**:
 
 It will return `My name is undefined`
+
+#### Q9:What will be logged to the console ? 
+
+```js
+const {
+
+  firstName: fName,
+
+  lastName: lname,
+
+  town: village,
+
+} = {
+
+  firstName: "Suvadeep",
+
+  lastName: "Mukherjee",
+
+  town: "khatra",
+
+};
+
+console.log(fName, lname, village);
+```
+
+**Answer**:
+
+The output will be `Suvadeep Mukherjee khatra`
