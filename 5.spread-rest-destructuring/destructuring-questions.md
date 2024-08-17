@@ -183,7 +183,19 @@ Answer: B
 
 By destructuring objects, we can unpack values from the  right-hand object, and assign the unpacked value to the value of the  same property name on the left-hand object. In this case, we're  assigning the value "💀" to `spookyItems[3]`. This means that we're modifying the `spookyItems` array, we're adding the "💀" to it. When logging `spookyItems`, `["👻", "🎃", "🕸", "💀"]` gets logged.
 
-#### Q6:**What will be the output**
+#### Q6: we have an array =[1,2,3,4], the final value of array should be [1,2,3,4,5] but we have to use object destructuring , write the code 
+
+**Answer**:
+
+```js
+const arr = [1, 2, 3, 4];
+
+({ item: arr[4] } = { item: 5 });
+
+console.log(arr);
+```
+
+#### Q7:**What will be the output**
 
 ```js
 const obj = {
@@ -199,7 +211,7 @@ console.log(var1, var2);
 - **Output** : 1, 2
 - **Reason** : Object destructuring extracts the values of var1 and var2 from obj object and prints them using console.log(var1, var2)
 
-#### Q7:**What will be the output**
+#### Q8:**What will be the output**
 
 ```js
 const user = { 
@@ -217,7 +229,7 @@ console.log(name);
 - **Reason for console.log(fullname)** : The name property from user is assigned to a local variable fullname.
 - **Reason for console.log(name)** : It gives an error because name was assigned to a local variable fullname and therefore name is not directly accessible.
 
-#### Q8:**What will be the output**
+#### Q9:**What will be the output**
 
 ```js
 const person = {
@@ -232,7 +244,7 @@ console.log(lastName);
 - **Output** : dighe
 - **Reason** : The lastName property is not defined in the person  object and the destructuring syntax provides a default value ("dighe")  to be used when the property is missing.
 
-#### Q9:**What will be the output**
+#### Q10:**What will be the output**
 
 ```js
 const person = {
