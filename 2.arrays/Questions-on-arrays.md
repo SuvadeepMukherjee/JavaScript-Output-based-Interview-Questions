@@ -1,6 +1,6 @@
 ## Questions on Arrays
 
-###### What's the output?
+#### Q1:What's the output?
 
 ```js
 const numbers = [1, 2, 3];
@@ -23,9 +23,7 @@ When you set a value to an element in an array that  exceeds the length of the a
 
 depending on where you run it (it's different for every browser, node, etc.)
 
-
-
-###### What's the output?
+#### Q2:What's the output?
 
 ```js
 [[0, 1], [2, 3]].reduce(
@@ -49,11 +47,7 @@ Answer: C
 
 Then, `[1, 2, 0, 1]` is `acc` and `[2, 3]` is `cur`. We concatenate them, and get `[1, 2, 0, 1, 2, 3]`
 
-
-
-
-
-###### What's the output ?
+#### Q3:What's the output ?
 
 ```js
 [1, 2, 3].map(num => {
@@ -75,9 +69,7 @@ When mapping over the array, the value of `num` is equal to the element it’s c
 
 However, we don’t return a value. When we don’t return a value from the function, the function returns `undefined`. For every element in the array, the function block gets called, so for each element we return `undefined`.
 
-
-
-###### What's the output?
+#### Q4:What's the output?
 
 ```js
 [1, 2, 3, 4].reduce((x, y) => console.log(x, y));
@@ -104,9 +96,7 @@ If you don't return a value from a function, it returns `undefined`. On the next
 
 On the fourth call, we again don't return from the callback function. The accumulator is again `undefined`, and the current value is `4`. `undefined` and `4` get logged.
 
-
-
-###### 74. What's the output?
+#### Q5: What's the output?
 
 ```js
 function addToList(item, list) {
@@ -130,9 +120,7 @@ The `.push()` method returns the *length* of the new array! Previously, the arra
 
 The `push` method modifies the original array. If you wanted to return the *array* from the function rather than the *length of the array*, you should have returned `list` after pushing `item` to it.
 
-
-
-###### What is the output?
+#### Q6:What is the output?
 
 ```js
 const myLifeSummedUp = ['☕', '💻', '🍷', '🍫'];
@@ -163,9 +151,7 @@ Where the keys are the enumerable properties. `0` `1` `2` `3` get logged.
 
 With a *for-of* loop, we can iterate over **iterables**. An array is an iterable. When we iterate over the array, the variable  "item" is equal to the element it's currently iterating over, `"☕"` `"💻"` `"🍷"` `"🍫"` get logged.
 
-
-
-###### What is the output?
+#### Q7:What is the output?
 
 ```js
 const list = [1 + 2, 1 * 2, 1 / 2];
@@ -185,9 +171,7 @@ Array elements can hold any value. Numbers, strings,  objects, other arrays, nul
 
 The element will be equal to the returned value. `1 + 2` returns `3`, `1 * 2` returns `2`, and `1 / 2` returns `0.5`.
 
-
-
-###### What's the output?
+#### Q8:What's the output?
 
 ```js
 let newList = [1, 2, 3].push(4);
@@ -208,9 +192,7 @@ The `.push` method returns the *new length* of the array, not the array itself! 
 
 Then, we try to use the `.push` method on `newList`. Since `newList` is the numerical value `4`, we cannot use the `.push` method: a TypeError is thrown.
 
-
-
-###### Which of these methods modifies the original array?
+#### Q9:Which of these methods modifies the original array?
 
 ```js
 const emojis = ['✨', '🥑', '😍'];
@@ -236,11 +218,7 @@ With `splice` method, we modify the original  array by deleting, replacing or ad
 
 `map`, `filter` and `slice` return a new array, `find` returns an element, and `reduce` returns a reduced value.
 
-
-
-
-
-###### What's the output?
+#### Q10:What's the output?
 
 ```js
 let num = 1;
@@ -260,9 +238,7 @@ Answer: B
 
 With the `+=` operator, we're incrementing the value of `num` by `1`. `num` had the initial value `1`, so `1 + 1` is `2`. The item on the second index in the `list` array is 🥰, `console.log(list[2])` prints 🥰.
 
-
-
-###### What's the output?
+#### Q11:What's the output?
 
 ```js
 const groceries = ['banana', 'apple', 'peanuts'];
@@ -285,9 +261,7 @@ Answer: B
 
 We passed the condition `groceries.indexOf("banana")` to the if-statement. `groceries.indexOf("banana")` returns `0`, which is a falsy value. Since the condition in the if-statement is falsy, the code in the `else` block runs, and `We don't have to buy bananas!` gets logged.
 
-
-
-###### What's the output?
+#### Q12:What's the output?
 
 ```js
 const emojis = ['🥑', ['✨', '✨', ['🍕', '🍕']]];
@@ -306,11 +280,7 @@ Answer: B
 
 With the `flat` method, we can create a new,  flattened array. The depth of the flattened array depends on the value  that we pass. In this case, we passed the value `1` (which we didn't have to, that's the default value), meaning that only the arrays on the first depth will be concatenated. `['🥑']` and `['✨', '✨', ['🍕', '🍕']]` in this case. Concatenating these two arrays results in `['🥑', '✨', '✨', ['🍕', '🍕']]`.
 
-
-
-
-
-###### Which of the options result(s) in an error?
+#### Q13:Which of the options result(s) in an error?
 
 ```js
 const emojis = ['🎄', '🎅🏼', '🎁', '⭐'];
@@ -332,9 +302,7 @@ Answer: D
 
 The `const` keyword simply means we cannot *redeclare* the value of that variable, it's *read-only*. However, the value itself isn't immutable. The properties on the `emojis` array can be modified, for example by pushing new values, splicing them, or setting the length of the array to 0.
 
-
-
-###### What's the output?
+#### Q14:What's the output?
 
 ```js
 const fruit = ['🍌', '🍊', '🍎']
@@ -357,9 +325,7 @@ Answer: C
 
 First, we invoke the `slice` method on the  fruit array. The slice method does not modify the original array, but  returns the value that it sliced off the array: the banana emoji. Then, we invoke the `splice` method on the fruit array. The splice method does modify the original array, which means that the fruit array now consists of `['🍊', '🍎']`. At last, we invoke the `unshift` method on the `fruit` array, which modifies the original array by adding the provided value,  ‘🍇’ in this case,  as the first element in the array.  The fruit array  now consists of `['🍇', '🍊', '🍎']`.
 
-
-
-**What will be the output**
+#### Q15:**What will be the output**
 
 ```js
 let arr = [1, 2, 3, 4, 5, -6, 7];
@@ -372,9 +338,7 @@ console.log(arr);
 - **Output** : [ ]
 - **Reason** : The length of the array has been set to 0, so the array becomes empty.
 
-
-
-**What will be the output**
+#### Q16:**What will be the output**
 
 ```js
 console.log([11, 2, 31] + [4, 5, 6]);
@@ -385,9 +349,7 @@ console.log([11, 2, 31] + [4, 5, 6]);
 - **Output** : "11,2,314,5,6"
 - **Reason** : The + operator is used for both addition and string concatenation. When you try to concatenate two arrays using the +  operator, the arrays are converted to strings and then concatenated  together. In this case, the arrays [11, 2, 31] and [4, 5, 6] are  converted to strings as "11,2,31" and "4,5,6" respectively. Then, the  two strings are concatenated, resulting in "11,2,314,5,6".
 
-
-
-**What will be the output**
+#### Q17**What will be the output**
 
 ```js
 console.log('apple'.split(''));
@@ -398,7 +360,7 @@ console.log('apple'.split(''));
 - **Output** : [ 'a', 'p', 'p', 'l', 'e' ]
 - **Reason** : split method is used to split a string into an array of substrings based on a specified separator. 
 
-**What will be the output**
+#### Q18:**What will be the output**
 
 ```js
 const arr = [2,3,5,2,8,10,5];
@@ -410,7 +372,7 @@ console.log(arr.indexOf(5))
 - **Output** : 2
 - **Reason** : indexOf method returns the index of the first occurrence of the specified element in the array. 
 
-**What will be the output**
+#### Q19:**What will be the output**
 
 ```js
 const array = [8, 18, 28, 38];
@@ -424,7 +386,7 @@ console.log(result);
 - **Output** : [ 30, 40 ]
 - **Reason** : The code increments each element in the array by 2 using map and filters out elements greater than 25 using filter.
 
-**What will be the output**
+#### Q20:**What will be the output**
 
 ```js
 function checkValue(value){
@@ -439,9 +401,7 @@ checkValue([1,2,3]);
 - **Output** : true
 - **Reason** : Array.isArray() method is used to check if the provided value is an array.
 
-
-
-**What will be the output**
+#### Q21:**What will be the output**
 
 ```js
 const arr = [10, -1, 2];
@@ -454,7 +414,7 @@ console.log(arr);
 - **Output** : [-1, 2, 10]
 - **Reason** : The compare function (a, b) => a - b sorts the numbers numerically in ascending order.
 
-**What will be the output**
+#### Q22:**What will be the output**
 
 ```js
 const arr = [11, 0, '', false, 2, 1];
