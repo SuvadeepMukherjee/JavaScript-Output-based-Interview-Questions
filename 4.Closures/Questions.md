@@ -1,6 +1,6 @@
 ## Closures 
 
-###### Q:What's the output?
+#### Q1:What's the output?
 
 ```js
 for (var i = 0; i < 3; i++) {
@@ -24,9 +24,7 @@ Because of the event queue in JavaScript, the `setTimeout` callback function is 
 
 In the second loop, the variable `i` was declared using the `let` keyword: variables declared with the `let` (and `const`) keyword are block-scoped (a block is anything between `{ }`). During each iteration, `i` will have a new value, and each value is scoped inside the loop.
 
-
-
-###### What is the output?
+#### Q2:What is the output?
 
 ```js
 const add = () => {
@@ -67,9 +65,7 @@ The second time, the `cache` object contains the value that gets returned for `1
 
 The third time, we pass `5 * 2` to the function which gets evaluated to `10`. The `cache` object contains the value that gets returned for `10`. The condition of the if-statement `num in cache` returns `true`, and `'From cache! 20'` gets logged.
 
-
-
-**What will be the output**
+#### Q3**What will be the output**
 
 ```js
 for(var i = 0; i < 10; i++){
@@ -84,7 +80,7 @@ for(var i = 0; i < 10; i++){
 - **Output** : 10 times, "value is 10"
 - **Reason** : "var" has a function scope, and there will be only  one shared binding for the iterations. By the time the setTimeout  function gets executed, the for loop has already completed and the value of the variable i is 10.
 
-**What will be the output**
+#### Q4**What will be the output**
 
 ```js
 for(let i = 0; i < 10; i++){
