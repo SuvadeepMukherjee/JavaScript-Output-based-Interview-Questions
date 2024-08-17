@@ -163,3 +163,22 @@ console.log(firstName, lastName, town);
 
 The output will be `Suvadeep Mukherjee Khatra`
 
+#### Q11:What will be logged to the console ? 
+
+```js
+const {
+
+  lastName: { familyName: surName },
+
+} = {
+
+  lastName: { familyName: "Mukherjee" },
+
+};
+
+console.log(surName);
+```
+
+**Answer**:
+
+The output will be `Mukherjee`
