@@ -23,9 +23,7 @@ This is possible in JavaScript, because functions are objects! (Everything besid
 
 A function is a special type of object. The code you write yourself isn't the actual function. The function is an object with  properties. This property is invocable.
 
-
-
-#### Q3:Is this a pure function?
+#### Q2:Is this a pure function?
 
 ```js
 function sum(a, b) {
@@ -44,7 +42,7 @@ A pure function is a function that *always* returns the same result, if the same
 
 The `sum` function always returns the same result. If we pass `1` and `2`, it will *always* return `3` without side effects. If we pass `5` and `10`, it will *always* return `15`, and so on. This is the definition of a pure function.
 
-#### Q4:What is the output?
+#### Q3:What is the output?
 
 ```js
 function sayHi(name) {
@@ -71,7 +69,7 @@ In ES6, we can overwrite this default `undefined` value with default parameters.
 
 In this case, if we didn't pass a value or if we passed `undefined`, `name` would always be equal to the string `Lydia`
 
-#### Q5:What's the output?
+#### Q4:What's the output?
 
 ```js
 function sum(num1, num2 = num1) {
@@ -94,7 +92,7 @@ You can set a default parameter's value equal to another parameter of the functi
 
 If you're trying to set a default parameter's value equal to a parameter that is defined *after* (to the right), the parameter's value hasn't been initialized yet, which will throw an error.
 
-#### Q6:What's the output?
+#### Q5:What's the output?
 
 ```js
 const add = x => x + x;
@@ -120,7 +118,7 @@ First, we invoked `myFunc()` without passing any arguments. Since we didn't pass
 
 Then, we invoked `myFunc(3)` and passed the value `3` as the value for the argument `num`. We didn't pass an argument for `value`. Since we didn't pass a value for the `value` argument, it got the default value: the returned value of the `add` function. To `add`, we pass `num`, which has the value of `3`. `add` returns `6`, which is the value of `value`.
 
-#### Q7:What's the output?
+#### Q6:What's the output?
 
 ```js
 const person = {
@@ -159,7 +157,7 @@ Last, we invoke the `addHobby` function, and pass `"baking"` as the value for `h
 
 After pushing `dancing` and `baking`, the value of `person.hobbies` is `["coding", "dancing", "baking"]`
 
-#### Q8:**What will be the output**
+#### Q7:**What will be the output**
 
 ```js
 function sum(a=5, b=7){
