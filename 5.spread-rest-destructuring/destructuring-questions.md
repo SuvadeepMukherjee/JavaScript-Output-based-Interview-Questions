@@ -125,7 +125,45 @@ The following function would have returned an object:
 
 `const getUser = user => ({ name: user.name, age: user.age })`
 
-#### Q4:What's the output?
+#### Q4:Fix the code such that we get desired output 
+
+```js
+const obj = {
+
+  name: "Lydia",
+
+  age: 21,
+
+  works: "Vercel",
+
+};
+
+const getUser =user=>{name:user.name,age:user.age} 
+
+console.log(getuser(obj));//{name:"Lydia",age:21}
+```
+
+**Answer**:
+
+```js
+const obj = {
+
+  name: "Lydia",
+
+  age: 21,
+
+  works: "Vercel",
+
+};
+
+const getUser = (user) => ({ name: user.name, age: user.age });
+
+console.log(getUser(obj)); //{name:"Lydia",age:21}
+```
+
+
+
+#### Q5:What's the output?
 
 ```js
 const spookyItems = ['👻', '🎃', '🕸'];
@@ -145,7 +183,7 @@ Answer: B
 
 By destructuring objects, we can unpack values from the  right-hand object, and assign the unpacked value to the value of the  same property name on the left-hand object. In this case, we're  assigning the value "💀" to `spookyItems[3]`. This means that we're modifying the `spookyItems` array, we're adding the "💀" to it. When logging `spookyItems`, `["👻", "🎃", "🕸", "💀"]` gets logged.
 
-#### Q5:**What will be the output**
+#### Q6:**What will be the output**
 
 ```js
 const obj = {
@@ -161,7 +199,7 @@ console.log(var1, var2);
 - **Output** : 1, 2
 - **Reason** : Object destructuring extracts the values of var1 and var2 from obj object and prints them using console.log(var1, var2)
 
-#### Q6:**What will be the output**
+#### Q7:**What will be the output**
 
 ```js
 const user = { 
@@ -179,7 +217,7 @@ console.log(name);
 - **Reason for console.log(fullname)** : The name property from user is assigned to a local variable fullname.
 - **Reason for console.log(name)** : It gives an error because name was assigned to a local variable fullname and therefore name is not directly accessible.
 
-#### Q7:**What will be the output**
+#### Q8:**What will be the output**
 
 ```js
 const person = {
@@ -194,7 +232,7 @@ console.log(lastName);
 - **Output** : dighe
 - **Reason** : The lastName property is not defined in the person  object and the destructuring syntax provides a default value ("dighe")  to be used when the property is missing.
 
-#### Q8:**What will be the output**
+#### Q9:**What will be the output**
 
 ```js
 const person = {
