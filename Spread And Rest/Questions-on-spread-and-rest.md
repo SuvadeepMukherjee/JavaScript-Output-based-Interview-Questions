@@ -123,3 +123,34 @@ function sumValues(x, y, z) {
 Answer: C
 
 With the spread operator `...`, we can *spread* iterables to individual elements. The `sumValues` function receives three arguments: `x`, `y` and `z`. `...[1, 2, 3]` will result in `1, 2, 3`, which we pass to the `sumValues` function.
+
+
+
+
+
+**What will be the output**
+
+```js
+const arr1 = [1, 2, 3, 4];
+const arr2 = [6, 7, 5];
+const result = [...arr1, ...arr2];
+console.log(result);
+```
+
+**Answer**:
+
+- **Output** : [1, 2, 3, 4, 6, 7, 5]
+- **Reason** : Spread operator (...) concatenates the two arrays into "result" array.
+
+**What will be the output**
+
+```js
+const person1 = { name: 'xyz', age: 21 };
+const person2 = { city: 'abc', ...person1 };
+console.log(person2);
+```
+
+**Answer**:
+
+- **Output** : { city: 'abc', name: 'xyz', age: 21 }
+- **Reason** : Spread operator (...) copies all the properties from person1 into person2.

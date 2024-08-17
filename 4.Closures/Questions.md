@@ -66,3 +66,35 @@ We call the `addFunction` function three times with the same value: on the first
 The second time, the `cache` object contains the value that gets returned for `10`. The condition of the if-statement `num in cache` returns `true`, and `'From cache! 20'` gets logged.
 
 The third time, we pass `5 * 2` to the function which gets evaluated to `10`. The `cache` object contains the value that gets returned for `10`. The condition of the if-statement `num in cache` returns `true`, and `'From cache! 20'` gets logged.
+
+
+
+**What will be the output**
+
+```js
+for(var i = 0; i < 10; i++){
+    setTimeout(function(){
+      console.log("value is " + i);
+  })
+}
+```
+
+**Answer**:
+
+- **Output** : 10 times, "value is 10"
+- **Reason** : "var" has a function scope, and there will be only  one shared binding for the iterations. By the time the setTimeout  function gets executed, the for loop has already completed and the value of the variable i is 10.
+
+**What will be the output**
+
+```js
+for(let i = 0; i < 10; i++){
+    setTimeout(function(){
+      console.log("value is " + i);
+  })
+}
+```
+
+**Answer**:
+
+- **Output** : 10 times "value is" followed by the value of i in each iteration, from 0 to 9
+- **Reason** : "let" has a block scope, and a new binding will be  created for each iteration. Here, a new variable i is created and has a  different value for each iteration of the loop.

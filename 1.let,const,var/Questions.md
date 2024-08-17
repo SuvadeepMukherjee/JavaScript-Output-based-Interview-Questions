@@ -134,3 +134,112 @@ getInfo();
 Answer: D
 
 Variables declared with the `const` keyword are not referenceable before their initialization: this is called the *temporal dead zone*. In the `getInfo` function, the variable `randomValue` is scoped in the functional scope of `getInfo`. On the line where we want to log the value of `typeof randomValue`, the variable `randomValue` isn't initialized yet: a `ReferenceError` gets thrown! The engine didn't go down the scope chain since we declared the variable `randomValue` in the `getInfo` function.
+
+
+
+
+
+**What will be the output**
+
+```js
+x = 10;
+console.log(x);
+var x;
+```
+
+**Answer**:
+
+- **Output** : 10
+- **Reason** : The declaration of the variable x is hoisted to the top of its scope.
+
+**What will be the output**
+
+```js
+let a = 10;
+if(true){
+   let a = 20;
+   console.log(a, "inside");
+}
+console.log(a, "outside");
+```
+
+**Answer**:
+
+- **Output** : 20, "inside" and 10, "outside"
+- **Reason** : The variable "a" declared inside "if" has block scope and does not affect the value of the outer "a" variable.
+
+**What will be the output**
+
+```js
+var a = "xyz";
+var a = "pqr";
+console.log(a)
+```
+
+**Answer**:
+
+- **Output** : "pqr"
+- **Reason** : Both the variables are declared using "var" keyword with the same name "a". The second variable declaration will override  the first variable declaration.
+
+
+
+**What will be the output**
+
+```js
+console.log(printName());
+function printName(){
+    return "Hi my name is Bob"
+}
+```
+
+**Answer**:
+
+- **Output** : Hi my name is Bob
+- **Reason** : Regular functions are hoisted to the top. And you can access and call them even before they are declared. 
+
+**What will be the output**
+
+```js
+console.log(printName());
+const printName = () => {
+    return "Hi my name is Bob"
+}
+```
+
+**Answer**:
+
+- **Output** : ReferenceError: Cannot access 'printName' before initialization
+- **Reason** : Arrow functions cannot be accessed before they are initialised. 
+
+
+
+**What will be the output**
+
+```js
+function hello(){
+console.log(name);
+console.log(age);
+var name = "Alice";
+let age = 21;
+}
+hello();
+```
+
+**Answer**:
+
+- **Output** : undefined, ReferenceError: can't access lexical declaration 'age' before initialization"
+- **Reason for console.log(name)** : The variable name (declared  with var) is hoisted to the top, so JavaScript knows it exists, but it  hasn't been assigned a value yet, so it prints undefined
+- **Reason for console.log(age)** : The variable age (declared  with let) is also hoisted to the top of its scope, but unlike var, it is not initialized until the line where it is declared.
+
+**What will be the output**
+
+```js
+var a = 10;
+let a = 20;
+console.log(a)
+```
+
+**Answer**:
+
+- **Output** : SyntaxError: Identifier 'a' has already been declared
+- **Reason** : In Javascript, we cannot redeclare a variable with let if it has already been declared in the same scope. 

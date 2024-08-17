@@ -971,3 +971,93 @@ Answer: C
 
 The default value of `address` is an empty object `{}`. When we set the variable `member` equal to the object returned by the `createMember` function, we didn't pass a value for the address, which means that the value of the address is the default empty object `{}`. An empty object is a truthy value, which means that the condition of the `address ? address : null` conditional returns `true`. The value of the address is the empty object `{}`.
 
+
+
+
+
+**What will be the output**
+
+```js
+let a = { x: 1, y: 2 }
+let b = a;
+b.x = 3;
+console.log(a);
+console.log(b);
+```
+
+**Answer**:
+
+- **Output** : { x: 3, y: 2 } { x: 3, y: 2 }
+- **Reason** : 'a' and 'b' both are pointing to the same reference.
+
+**What will be the output**
+
+```js
+console.log({} == {}); 
+console.log({} === {});
+```
+
+**Answer**:
+
+- **Output** : false, false
+- **Reason** : When you compare objects using == or ===, it checks if they refer to the exact same object. So even if they are looking  same, they are pointing to different memory locations.
+
+**What will be the output (shallow copy of an object)**
+
+```js
+const userDetails = {
+  firstName: "Surbhi",
+  lastName: "Dighe",
+  age: 20,
+  address: {
+    city: "Hyderabad",
+    country: "India",
+  },
+};
+
+let cloneUserDetails = { ...userDetails };
+//Updating original object
+userDetails.age = 22;
+userDetails.address.city = "Banglore";
+
+console.log(cloneUserDetails.age); 
+console.log(cloneUserDetails.address.city);
+```
+
+**Answer**:
+
+- **Output** : 20, "Banglore"
+- **Reason**  : cloneUserDetails is created by using the spread  syntax ({ ...userDetails }). This syntax creates a shallow copy of the  userDetails object, meaning that the top-level properties are copied,  but nested objects are still referenced.
+- **case 1** : Although userDetails.age was changed to 22,  cloneUserDetails still holds the original value of 20. This is because  the spread syntax only creates a shallow copy, so the age property of  cloneUserDetails remains unchanged.
+- **case 2** : The nested address object is still referenced by  cloneUserDetails, so when the city property of userDetails.address is  changed, it reflects in cloneUserDetails.address as well. Therefore, the output is "Banglore".
+
+
+
+**What will be the output**
+
+```js
+const a = {x : 1};
+const b = {x : 1};
+console.log(a === b);
+console.log(a.x === b.x)
+```
+
+**Answer**:
+
+- **Output** : false, true
+- **Reason for console.log(a === b)** : This compares whether a  and b refer to the exact same object in memory. They are two different  objects in memory, so the comparison evaluates to false
+- **Reason for console.log(a.x === b.x)** : This compares the x  property of objects a and b. Since both a.x and b.x have the same value  i.e., 1, so the comparison evaluates to true.
+
+
+
+**What will be the output**
+
+```js
+const arr = ["A","B","C","D","E"]
+console.log(Object.keys(arr)); 
+```
+
+**Answer**:
+
+- **Output** : [ '0', '1', '2', '3', '4' ]
+- **Reason** : In JavaScript, arrays are a special type of object. Object.keys() on an array returns an array of strings representing the  indices of the array elements. 

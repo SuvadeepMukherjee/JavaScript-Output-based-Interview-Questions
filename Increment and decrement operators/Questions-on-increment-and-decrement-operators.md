@@ -59,3 +59,19 @@ Answer: A
 The unary operator `++` *first returns* the value of the operand, *then increments* the value of the operand. The value of `num1` is `10`, since the `increaseNumber` function first returns the value of `num`, which is `10`, and only increments the value of `num` afterward.
 
 `num2` is `10`, since we passed `num1` to the `increasePassedNumber`. `number` is equal to `10`(the value of `num1`). Again, the unary operator `++` *first returns* the value of the operand, *then increments* the value of the operand. The value of `number` is `10`, so `num2` is equal to `10`.
+
+
+
+**What will be the output**
+
+```js
+let x = 5;
+let y = x++;
+console.log(y);
+console.log(x)
+```
+
+**Answer**:
+
+- **Output** : 5, 6
+- **Reason** : The post-increment operator increments and returns the value before incrementing.

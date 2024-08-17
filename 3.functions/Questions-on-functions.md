@@ -241,3 +241,21 @@ Then, we invoke the `addHobby` function, and pass `"dancing"` as the value for `
 Last, we invoke the `addHobby` function, and pass `"baking"` as the value for `hobby`, and the `person.hobbies` array as the value for `hobbies`. We push the hobby `baking` to the `person.hobbies` array.
 
 After pushing `dancing` and `baking`, the value of `person.hobbies` is `["coding", "dancing", "baking"]`
+
+
+
+
+
+**What will be the output**
+
+```js
+function sum(a=5, b=7){
+    return a+b;
+}
+console.log(sum(undefined, 20));
+```
+
+**Answer**:
+
+- **Output** : 25
+- **Reason** : Here, undefined is passed as the value for  parameter a, and 20 is passed for parameter b. When any parameter is  undefined, the default value is used. 

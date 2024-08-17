@@ -314,3 +314,115 @@ console.log(count)
 Answer: C
 
 The `if` condition within the `forEach` loop checks whether the value of `num` is truthy or falsy. Since the first number in the `nums` array is `0`, a falsy value, the `if` statement's code block won't be executed. `count` only gets incremented for the other 3 numbers in the `nums` array, `1`, `2` and `3`. Since `count` gets incremented by `1` 3 times, the value of `count` is `3`.
+
+
+
+**What will be the output**
+
+```js
+let f = "8";
+let a = 1;
+console.log((+f)+a+1);
+```
+
+**Answer**:
+
+- **Output** : 10
+- **Reason** : The expression (+f) is a shorthand way to convert the string value of f to a number. Therefore, (+f) evaluates to 8.
+
+**What will be the output**
+
+```js
+console.log(5 < 6 < 7);
+```
+
+**Answer**:
+
+- **Output** : true
+- **Reason** : In JavaScript, the < operator evaluates  expressions from left to right. First, the expression 5 < 6 is  evaluated, resulting in true because 5 is less than 6. Then, the  expression true < 7 is evaluated. In this case, JavaScript performs  type coercion and converts true to the number 1. Therefore, the  expression becomes 1 < 7, which is true.
+
+**What will be the output**
+
+```js
+console.log(7 > 6 > 5);
+```
+
+**Answer**:
+
+- **Output** : false
+- **Reason** : In JavaScript, the > operator evaluates  expressions from left to right. First, the expression 7 > 6 is  evaluated, resulting in true because 7 is greater than 6. Then, the  expression true > 5 is evaluated. In this case, JavaScript performs  type coercion and converts true to the number 1. Therefore, the  expression becomes 1 > 5, which is false.
+
+**What will be the output**
+
+```js
+console.log(0 == false);
+console.log(1 == true);
+```
+
+**Answer**:
+
+- **Output** : true, true
+- **Reason** : The == operator converts operands to a common type  before making the comparison. In both the cases, the boolean value will  be converted to a number, i.e., false is converted to 0 and true is  converted to 1. So, the expression 0 == false is equivalent to 0 == 0  and 1 == true is equivalent to 1 == 1.
+
+**What will be the output**
+
+```js
+console.log(10 + "5");
+console.log("5" + 10);
+```
+
+**Answer**:
+
+- **Output** : 105, 510
+- **Reason** : Since one operand is a string, the + operator performs string concatenation. 
+
+
+
+**What will be the output**
+
+```js
+console.log(10 - "5");
+console.log("5" - 10);
+```
+
+**Answer**:
+
+- **Output** : 5, -5
+- **Reason** : In JavaScript, when the subtraction operator - is  used, the operands are converted to numbers before performing the  subtraction 
+
+
+
+**What will be the output**
+
+```js
+const arr1 = [1,2,3];
+const arr2 = [1,2,3];
+const str = "1,2,3";
+
+console.log(arr1 == str);
+console.log(arr1 == arr2);
+```
+
+**Answer**:
+
+- **Output** : true, false
+- **Reason for console.log(arr1 == str)** : Javascript compiler  performs type conversion. In this case, it converts the array arr1 and  the string str to their string representations and then compares them.
+- **Reason for console.log(age)** : In Javascript arrays are  objects and objects are compared by reference. In this case, arr1 and  arr2 are pointing to 2 different memory locations
+
+**What will be the output**
+
+```js
+var x = 0;
+var y = 10;
+if(x){
+  console.log(x);
+}
+if(y){
+  console.log(y);
+}
+```
+
+**Answer**:
+
+- **Output** : 10
+- **Reason** : x = 0 is falsy and doesn't trigger the console.log(x), while y = 10 is truthy and triggers the console.log(y).

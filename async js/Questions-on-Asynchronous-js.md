@@ -318,3 +318,23 @@ runPromises()
 Answer: D
 
 The `Promise.all` method runs the passed promises in parallel. If one promise fails, the `Promise.all` method *rejects* with the value of the rejected promise. In this case, `promise3` is rejected with the value `"Third"`. We’re catching the rejected value in the chained `catch` method on the `runPromises` invocation to catch any errors  within the `runPromises` function. Only `"Third"` gets logged, since `promise3` is rejected with this value.
+
+
+
+**What will be the output**
+
+```js
+function hello() {
+  console.log("1");
+    setTimeout(() => {
+        console.log("2");
+    })
+  console.log("3");
+}
+hello();
+```
+
+**Answer**;
+
+- **Output** : "1" followed by "3", and then after a small delay, "2"
+- **Reason** : console.log("1") statement logs "1" to the console. Then setTimeout() function is set to execute the callback function in  the next event loop iteration and logs "3" to the console.

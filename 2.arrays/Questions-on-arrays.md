@@ -356,3 +356,113 @@ console.log(fruit)
 Answer: C
 
 First, we invoke the `slice` method on the  fruit array. The slice method does not modify the original array, but  returns the value that it sliced off the array: the banana emoji. Then, we invoke the `splice` method on the fruit array. The splice method does modify the original array, which means that the fruit array now consists of `['🍊', '🍎']`. At last, we invoke the `unshift` method on the `fruit` array, which modifies the original array by adding the provided value,  ‘🍇’ in this case,  as the first element in the array.  The fruit array  now consists of `['🍇', '🍊', '🍎']`.
+
+
+
+**What will be the output**
+
+```js
+let arr = [1, 2, 3, 4, 5, -6, 7];
+arr.length = 0;
+console.log(arr);
+```
+
+**Answer**:
+
+- **Output** : [ ]
+- **Reason** : The length of the array has been set to 0, so the array becomes empty.
+
+
+
+**What will be the output**
+
+```js
+console.log([11, 2, 31] + [4, 5, 6]);
+```
+
+**Answer**:
+
+- **Output** : "11,2,314,5,6"
+- **Reason** : The + operator is used for both addition and string concatenation. When you try to concatenate two arrays using the +  operator, the arrays are converted to strings and then concatenated  together. In this case, the arrays [11, 2, 31] and [4, 5, 6] are  converted to strings as "11,2,31" and "4,5,6" respectively. Then, the  two strings are concatenated, resulting in "11,2,314,5,6".
+
+
+
+**What will be the output**
+
+```js
+console.log('apple'.split(''));
+```
+
+**Answer**:
+
+- **Output** : [ 'a', 'p', 'p', 'l', 'e' ]
+- **Reason** : split method is used to split a string into an array of substrings based on a specified separator. 
+
+**What will be the output**
+
+```js
+const arr = [2,3,5,2,8,10,5];
+console.log(arr.indexOf(5))
+```
+
+**Answer**:
+
+- **Output** : 2
+- **Reason** : indexOf method returns the index of the first occurrence of the specified element in the array. 
+
+**What will be the output**
+
+```js
+const array = [8, 18, 28, 38];
+const result = array.map(element => element + 2)
+               .filter((element) => element > 25);
+console.log(result);
+```
+
+**Answer**:
+
+- **Output** : [ 30, 40 ]
+- **Reason** : The code increments each element in the array by 2 using map and filters out elements greater than 25 using filter.
+
+**What will be the output**
+
+```js
+function checkValue(value){
+    var result = Array.isArray(value);
+    console.log(result);
+}
+checkValue([1,2,3]);
+```
+
+**Answer**:
+
+- **Output** : true
+- **Reason** : Array.isArray() method is used to check if the provided value is an array.
+
+
+
+**What will be the output**
+
+```js
+const arr = [10, -1, 2];
+arr.sort((a, b) => a - b);
+console.log(arr);
+```
+
+**Answer**:
+
+- **Output** : [-1, 2, 10]
+- **Reason** : The compare function (a, b) => a - b sorts the numbers numerically in ascending order.
+
+**What will be the output**
+
+```js
+const arr = [11, 0, '', false, 2, 1];
+const filtered = arr.filter(Boolean);
+console.log(filtered);
+```
+
+**Answer**:
+
+- **Output** : [11, 2, 1]
+- **Reason** : filter(Boolean) removes all falsy values (0, ""  (empty string), false, null, undefined, and NaN) from the array and  keeps truthy ones.
