@@ -183,7 +183,7 @@ Answer: B
 
 By destructuring objects, we can unpack values from the  right-hand object, and assign the unpacked value to the value of the  same property name on the left-hand object. In this case, we're  assigning the value "💀" to `spookyItems[3]`. This means that we're modifying the `spookyItems` array, we're adding the "💀" to it. When logging `spookyItems`, `["👻", "🎃", "🕸", "💀"]` gets logged.
 
-#### Q6: we have an array =[1,2,3,4], the final value of array should be [1,2,3,4,5] but we have to use object destructuring , write the code 
+#### Q6:We have an array =[1,2,3,4], the final value of array should be [1,2,3,4,5] but we have to use object destructuring , write the code 
 
 **Answer**:
 
