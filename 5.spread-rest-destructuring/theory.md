@@ -219,3 +219,97 @@ console.log(firstName,otherInfo);
 **Answer**:
 
 The output will be `Suavdeep { lastName: 'Mukherjee', town: 'Khatra' }`
+
+#### Q14:What will be logged to the console ? 
+
+```js
+const { firstName = "Sovon", town = "Khatra" } = {
+
+  firstName: "Suvadeep",
+
+};
+
+console.log(firstName, town);
+```
+
+**Answer**:
+
+The output will be `Suvadeep Khatra`
+
+#### Q15:What will be logged to the console ? 
+
+```js
+const profile = {
+
+  firstName: "Suvadeep",
+
+  lastName: "Mukherjee",
+
+};
+
+function getUserBio({ firstName, lastName }) {
+
+  return `My name is ${firstName} ${lastName}.`;
+
+}
+
+console.log(getUserBio(profile));
+```
+
+**Answer**:
+
+The following will be logged to the console `My name is Suvadeep Mukherjee.`
+
+#### Q16:What will be logged to the console ? 
+
+```js
+const profile = {
+
+  town: "Khatra",
+
+  gender: "Male",
+
+  fullName: {
+
+    firstName: "Suvadeep",
+
+    lastName: "Mukherjee",
+
+  },
+
+};
+
+function getUserBio({ town, fullName: { firstName: userName } }) {
+
+  return `${userName} lives in ${town}`;
+
+}
+
+console.log(getUserBio(profile));
+```
+
+**Answer**:
+
+The following will be logged to the console `Suvadeep lives in Khatra`
+
+#### Q17:What will be logged to the console ?
+
+```js
+function getUserBio({ firstName } = {}) {
+
+  console.log(
+
+    "Do something else that does not need the destructuring parameter."
+
+  );
+
+  return `My name is ${firstName}.`;
+
+}
+
+console.log(getUserBio());
+```
+
+**Answer**:
+
+The following will be logged to the console `Do something else that does not need the destructuring parameter. My name is undefined.` 
