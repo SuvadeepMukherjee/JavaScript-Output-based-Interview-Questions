@@ -275,7 +275,27 @@ With the `var` keyword, you can declare multiple variables with the same name. T
 
 You cannot do this with `let` or `const` since they're block-scoped and therefore can't be redeclared.
 
+#### Q14:What's the output?
 
+```js
+function getPersonInfo(one, two, three) {
+  console.log(one);
+  console.log(two);
+  console.log(three);
+}
 
+const person = 'Lydia';
+const age = 21;
 
+getPersonInfo`${person} is ${age} years old`;  
+```
 
+- A: `"Lydia"` `21` `["", " is ", " years old"]`
+- B: `["", " is ", " years old"]` `"Lydia"` `21`
+- C: `"Lydia"` `["", " is ", " years old"]` `21`
+
+**Answer**:
+
+Answer: B
+
+If you use tagged template literals, the value of the  first argument is always an array of the string values. The remaining  arguments get the values of the passed expressions!
