@@ -1,6 +1,6 @@
 ## Questions on iife
 
-###### What's the output?
+#### Q1:What's the output?
 
 ```js
 function sayHi() {
@@ -23,11 +23,7 @@ The `sayHi` function returns the returned value of the immediately invoked funct
 
 FYI: `typeof` can return the following list of values: `undefined`, `boolean`, `number`, `bigint`, `string`, `symbol`, `function` and `object`. Note that `typeof null` returns `"object"`.
 
-
-
-
-
-###### What's the output?
+#### Q2:What's the output?
 
 ```js
 (() => {
@@ -58,13 +54,7 @@ Later, we set this block-scoped variable equal to `1`, and set the value of the 
 
 Outside of the `catch` block, `x` is still `undefined`, and `y` is `2`. When we want to `console.log(x)` outside of the `catch` block, it returns `undefined`, and `y` returns `2`.
 
-
-
-
-
-###### What's the output?
-
-
+#### Q3:What's the output?
 
 ```js
 (() => {
@@ -74,8 +64,6 @@ Outside of the `catch` block, `x` is still `undefined`, and `y` is `2`. When we 
 console.log(typeof x);
 console.log(typeof y);
 ```
-
-​    
 
 - A: `"undefined", "number"`
 - B: `"number", "number"`
@@ -99,9 +87,7 @@ Then, we declare a variable `x` with the value of `y`, which is `10`. Variables 
 
 However, we created a global variable `y` when setting `y` equal to `10`. This value is accessible anywhere in our code. `y` is defined, and holds a value of type `"number"`. `console.log(typeof y)` returns `"number"`.
 
-
-
-###### What's the output?
+#### Q4:What's the output?
 
 ```js
 console.log(`${(x => x)('I love')} to program`);
