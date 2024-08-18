@@ -1074,3 +1074,10 @@ console.log(Object.keys(object1));
 // Expected output: Array ["a", "b", "c"]
 ```
 
+#### Q40: Fill in the blanks 
+
+`Object.freeze` makes it impossible to add, remove, or modify properties of an object unless the property's value is ____.
+
+**Answer**:
+
+`Object.freeze` makes it impossible to add, remove, or modify properties of an object (unless the property's value is another object).
