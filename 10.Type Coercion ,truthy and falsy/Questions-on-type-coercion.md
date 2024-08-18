@@ -193,8 +193,6 @@ By setting `hasName` equal to `name`, you set `hasName` equal to whatever value 
 #### Q9:What's the value of output?
 
 ```js
-// 🎉✨ This is my 100th question! ✨🎉
-
 const output = `${[] && 'Im'}possible!
 You should${'' && `n't`} see a therapist after so much JavaScript lol`;
 ```
@@ -445,3 +443,15 @@ There are 8 falsy values:
 - `0`
 - `-0`
 - `0n` (BigInt(0))
+
+#### Q23:AND short circuiting ? 
+
+**Answer**:
+
+In the case of AND, the expression is evaluated until we get one  false result because the result will always be false, independent of the further conditions.
+
+#### Q24:OR short circuiting ? 
+
+**Answer**:
+
+In the case of OR, the expression is evaluated until we get one true result because the result will always be true, 
