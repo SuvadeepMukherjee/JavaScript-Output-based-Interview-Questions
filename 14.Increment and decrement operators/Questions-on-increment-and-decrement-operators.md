@@ -1,6 +1,6 @@
 ## Questions on increment and decrement operators 
 
-###### What's the output?
+#### Q1:What's the output?
 
 ```js
 let number = 0;
@@ -30,9 +30,7 @@ The **prefix** unary operator `++`:
 
 This returns `0 2 2`.
 
-
-
-###### What's the output?
+#### Q2:What's the output?
 
 ```js
 let num = 10;
@@ -60,9 +58,7 @@ The unary operator `++` *first returns* the value of the operand, *then incremen
 
 `num2` is `10`, since we passed `num1` to the `increasePassedNumber`. `number` is equal to `10`(the value of `num1`). Again, the unary operator `++` *first returns* the value of the operand, *then increments* the value of the operand. The value of `number` is `10`, so `num2` is equal to `10`.
 
-
-
-**What will be the output**
+#### Q3:**What will be the output**
 
 ```js
 let x = 5;
