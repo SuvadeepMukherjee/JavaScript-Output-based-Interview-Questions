@@ -119,3 +119,26 @@ console.log(user.email)
 Answer: A
 
 The `updateEmail` function is an arrow function, and is not bound to the `user` object. This means that the `this` keyword is not referring to the `user` object, but refers to  the global scope in this case. The value of `email` within the `user` object does not get updated. When logging the value of `user.email`, the original value of `my@email.com` gets returned.
+
+#### Q5:What's the output?
+
+```js
+function getAge() {
+  'use strict';
+  age = 21;
+  console.log(age);
+}
+
+getAge();
+```
+
+- A: `21`
+- B: `undefined`
+- C: `ReferenceError`
+- D: `TypeError`
+
+**Answer**:
+
+Answer: C
+
+With `"use strict"`, you can make sure that you don't accidentally declare global variables. We never declared the variable `age`, and since we use `"use strict"`, it will throw a reference error. If we didn't use `"use strict"`, it would have worked, since the property `age` would have gotten added to the global object.
