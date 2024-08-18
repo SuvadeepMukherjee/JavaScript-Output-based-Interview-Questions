@@ -1,6 +1,6 @@
 ## Questions on data structures
 
-###### What's the output?
+#### Q1:What's the output?
 
 ```js
 const set = new Set([1, 1, 2, 3, 4]);
@@ -21,9 +21,7 @@ The `Set` object is a collection of *unique* values: a value can only occur once
 
 We passed the iterable `[1, 1, 2, 3, 4]` with a duplicate value `1`. Since we cannot have two of the same values in a set, one of them is removed. This results in `{1, 2, 3, 4}`.
 
-
-
-###### What's the value of output?
+#### Q2:What's the value of output?
 
 ```js
 const set = new Set();
@@ -54,11 +52,7 @@ However, the second one is a string `"Lydia"`. `"Lydia"` is a string and `2` is 
 
 `{ name: "Lydia" }` is an object. Neither a  number nor an object is a string, so it stringifies both. Whenever we  stringify a regular object, it becomes `"[object Object]"`. `"[object Object]"` concatenated with `"2"` becomes `"[object Object]2"`.
 
-
-
-
-
-###### Which method(s) will return the value `'Hello world!'`?
+#### Q3:Which method(s) will return the value `'Hello world!'`?
 
 ```js
 const myMap = new Map();
