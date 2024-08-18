@@ -369,7 +369,7 @@ console.log(arr1 == arr2);
 
 - **Output** : true, false
 - **Reason for console.log(arr1 == str)** : Javascript compiler  performs type conversion. In this case, it converts the array arr1 and  the string str to their string representations and then compares them.
-- **Reason for console.log(age)** : In Javascript arrays are  objects and objects are compared by reference. In this case, arr1 and  arr2 are pointing to 2 different memory locations
+- **Reason for console.log(arr1==arr2)** : In Javascript arrays are  objects and objects are compared by reference. In this case, arr1 and  arr2 are pointing to 2 different memory locations
 
 #### Q19:**What will be the output**
 
