@@ -5,8 +5,8 @@
 | Functions                                          | [Questions](https://github.com/SuvadeepMukherjee/JavaScript-Output-based-Interview-Questions/blob/main/functions/Questions-on-functions.md) |
 | Closures                                           | [Questions](https://github.com/SuvadeepMukherjee/JavaScript-Output-based-Interview-Questions/blob/main/Closures/Questions%20on%20Closures.md) |
 | Spread , rest and destructuring                    | [Questions](https://github.com/SuvadeepMukherjee/JavaScript-Output-based-Interview-Questions/blob/main/spread-rest-destructuring(completed)/destructuring-questions.md) |
-| Currying                                           | [Questions]()                                                |
-| Objects                                            |                                                              |
+| Currying                                           | [Questions](https://github.com/SuvadeepMukherjee/JavaScript-Output-based-Interview-Questions/blob/main/currying/currying.md) |
+| Objects                                            | [Questions]()                                                |
 | this keyword                                       |                                                              |
 | Web Storage APIs                                   |                                                              |
 | Type coercion , truthy ,falsy and short circuiting |                                                              |
