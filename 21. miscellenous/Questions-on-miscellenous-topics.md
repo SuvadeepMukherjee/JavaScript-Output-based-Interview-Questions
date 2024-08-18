@@ -1,6 +1,6 @@
 ## Questions on Miscellenous Topics
 
-###### What's the output?
+#### Q1:What's the output?
 
 ```js
 for (let i = 1; i < 5; i++) {
@@ -20,9 +20,7 @@ Answer: C
 
 The `continue` statement skips an iteration if a certain condition returns `true`.
 
-
-
-###### What's the output?
+#### Q2:What's the output?
 
 ```js
 console.log(typeof typeof 1);
@@ -39,11 +37,7 @@ console.log(typeof typeof 1);
 
 typeof 1` returns `"number"`. `typeof "number"` returns `"string"
 
-
-
-
-
-###### Everything in JavaScript is either a...
+#### Q3:Everything in JavaScript is either a...
 
 - A: primitive or object
 - B: function or object
@@ -60,11 +54,7 @@ Primitive types are `boolean`, `null`, `undefined`, `bigint`, `number`, `string`
 
 What differentiates a primitive from an object is that  primitives do not have any properties or methods; however, you'll note  that `'foo'.toUpperCase()` evaluates to `'FOO'` and does not result in a `TypeError`. This is because when you try to access a property or method on a  primitive like a string, JavaScript will implicitly wrap the primitive  type using one of the wrapper classes, i.e. `String`, and then immediately discard the wrapper after the expression evaluates. All primitives except for `null` and `undefined` exhibit this behavior.
 
-
-
-
-
-###### What's the value of `num`?
+#### Q4:What's the value of `num`?
 
 ```js
 const num = parseInt('7*6', 10);
@@ -83,11 +73,7 @@ Only the first number in the string is returned. Based on the *radix* (the secon
 
 `*` is not a valid number. It only parses `"7"` into the decimal `7`. `num` now holds the value of `7`.
 
-
-
-
-
-###### What's the output ? 
+#### Q5:What's the output ? 
 
 ```js
 function greeting() {
@@ -119,11 +105,7 @@ With the `throw` statement, we can create custom errors. With this statement, yo
 
 With the `catch` statement, we can specify what to do if an exception is thrown in the `try` block. An exception is thrown: the string `'Hello world!'`. `e` is now equal to that string, which we log. This results in `'Oh an error: Hello world!'`.
 
-
-
-
-
-###### What's the output?
+#### Q6:What's the output?
 
 ```js
 const name = 'Lydia';
@@ -146,9 +128,7 @@ The `delete` operator returns a boolean value: `true` on a successful deletion, 
 
 The `name` variable was declared with a `const` keyword, so its deletion is not successful: `false` is returned. When we set `age` equal to `21`, we actually added a property called `age` to the global object. You can successfully delete properties from objects this way, also the global object, so `delete age` returns `true`.
 
-
-
-###### What's the output?
+#### Q7:What's the output?
 
 ```js
 function nums(a, b) {
@@ -182,9 +162,7 @@ a + b;
 
 ​    This means that `a + b` is never reached, since a function stops running after the `return` keyword. If no value gets returned, like here, the function returns `undefined`. Note that there is no automatic insertion after `if/else` statements!
 
-
-
-###### What's the output?
+#### Q8:What's the output?
 
 ```js
 const name = 'Lydia';
@@ -207,9 +185,7 @@ TypeErrors get thrown when a value is not of the expected type. JavaScript expec
 
 SyntaxErrors get thrown when you've written something that isn't valid JavaScript, for example when you've written the word `return` as `retrun`. ReferenceErrors get thrown when JavaScript isn't able to find a reference to a value that you're trying to access.
 
-
-
-###### What's the output?
+#### Q9:What's the output?
 
 ```js
 const name = 'Lydia Hallie';
@@ -235,11 +211,7 @@ With the `Number.isNaN` method, you can check if the value you pass is a *numeri
 
 With the `isNaN` method, you can check if the value you pass is not a number. `name` is not a number, so `isNaN(name)` returns true. `age` is a number, so `isNaN(age)` returns `false`.
 
-
-
-
-
-###### What's the output?
+#### Q10:What's the output?
 
 ```js
 function getFruit(fruits) {
@@ -268,11 +240,7 @@ Then, we're invoking the `getFruits` function without passing a value as an argu
 
 Lastly, we're trying to log the second item in the `['🍊', '🍌']` subarray of `['🍍'], ['🍊', '🍌']`. The item on index `1` within this subarray is `🍌`, which gets logged.
 
-
-
-
-
-###### What's the output?
+#### Q11:What's the output?
 
 ```js
 let randomValue = { name: "Lydia" }
@@ -298,9 +266,7 @@ The condition within the `if` statement checks whether the value of `!typeof ran
 
 `!typeof randomValue === "string"` always returns false, since we're actually checking `false === "string"`. Since the condition returned `false`, the code block of the `else` statement gets run, and `Yay it's a string!` gets logged.
 
-
-
-#### What is optional chaining ? 
+#### Q12:What is optional chaining ? 
 
 **Answer**:
 
