@@ -1,6 +1,6 @@
 ## Questions on Type Coercion
 
-###### What's the output?
+#### Q1:What's the output?
 
 ```js
 +true;
@@ -19,9 +19,7 @@ The unary plus tries to convert an operand to a number. `true` is `1`, and `fals
 
 The string `'Lydia'` is a truthy value. What we're actually asking, is "Is this truthy value falsy?". This returns `false`.
 
-
-
-###### What's the output?
+#### Q2:What's the output?
 
 ```js
 let a = 3;
@@ -48,9 +46,7 @@ When we use the `==` operator (Equality operator), it only checks whether it has
 
 However, when we use the `===` operator (Strict equality operator), both value *and* type should be the same. It's not: `new Number()` is not a number, it's an **object**. Both return `false.`
 
-
-
-###### What's the output?
+#### Q3:What's the output?
 
 ```js
 function sum(a, b) {
@@ -73,9 +69,7 @@ JavaScript is a **dynamically typed language**: we don't specify what types cert
 
 In this example, JavaScript converts the number `1` into a string, in order for the function to make sense and return a value. During the addition of a numeric type (`1`) and a string type (`'2'`), the number is treated as a string. We can concatenate strings like `"Hello" + "World"`, so what's happening here is `"1" + "2"` which returns `"12"`.
 
-
-
-###### Which of these values are falsy?
+#### Q4:Which of these values are falsy?
 
 ```js
 0;
@@ -108,9 +102,7 @@ There are 8 falsy values:
 
 Function constructors, like `new Number` and `new Boolean` are truthy.
 
-
-
-###### What's the output?
+#### Q5:What's the output?
 
 ```js
 !!null;
@@ -133,11 +125,7 @@ Answer: B
 
 `1` is truthy. `!1` returns `false`. `!false` returns `true`.
 
-
-
-
-
-###### What's the output?
+#### Q6:What's the output?
 
 ```js
 console.log(3 + 4 + '5');
@@ -158,9 +146,7 @@ Operator associativity is the order in which the compiler  evaluates the express
 
 `7 + '5'` results in `"75"` because of coercion. JavaScript converts the number `7` into a string, see question 15. We can concatenate two strings using the `+`operator. `"7" + "5"` results in `"75"`.
 
-
-
-###### What's the output?
+#### Q7:What's the output?
 
 ```js
 console.log(Number(2) === Number(2));
@@ -179,11 +165,7 @@ Answer: A
 
 Every Symbol is entirely unique. The purpose of the  argument passed to the Symbol is to give the Symbol a description. The  value of the Symbol is not dependent on the passed argument. As we test  equality, we are creating two entirely new symbols: the first `Symbol('foo')`, and the second `Symbol('foo')`. These two values are unique and not equal to each other, `Symbol('foo') === Symbol('foo')` returns `false`.
 
-
-
-
-
-###### Which option is a way to set `hasName` equal to `true`, provided you cannot pass `true` as an argument?
+#### Q8:Which option is a way to set `hasName` equal to `true`, provided you cannot pass `true` as an argument?
 
 ```js
 function getName(name) {
@@ -208,9 +190,7 @@ By setting `hasName` equal to `name`, you set `hasName` equal to whatever value 
 
 `name.length` returns the length of the passed argument, not whether it's `true`.
 
-
-
-###### What's the value of output?
+#### Q9:What's the value of output?
 
 ```js
 // 🎉✨ This is my 100th question! ✨🎉
@@ -232,9 +212,7 @@ Answer: B
 
 `""` is a falsy value. If the left-hand value is falsy, nothing gets returned. `n't` doesn't get returned.
 
-
-
-###### What's the value of output?
+#### Q10:What's the value of output?
 
 ```js
 const one = false || {} || null;
@@ -261,11 +239,7 @@ With the `||` operator, we can return the first truthy operand. If all values ar
 
 `([] || 0 || "")`: the empty array`[]` is a truthy value. This is the first truthy value, which gets returned. `three` is equal to `[]`.
 
-
-
-
-
-###### What's the output?
+#### Q11:What's the output?
 
 ```js
 const name = 'Lydia Hallie';
@@ -287,11 +261,7 @@ Answer: C
 
 (If we wanted to check whether the type was (un)equal to a certain type, we should've written `!==` instead of `!typeof`)
 
-
-
-
-
-###### What's the output?
+#### Q12:What's the output?
 
 ```js
 let count = 0;
@@ -315,9 +285,7 @@ Answer: C
 
 The `if` condition within the `forEach` loop checks whether the value of `num` is truthy or falsy. Since the first number in the `nums` array is `0`, a falsy value, the `if` statement's code block won't be executed. `count` only gets incremented for the other 3 numbers in the `nums` array, `1`, `2` and `3`. Since `count` gets incremented by `1` 3 times, the value of `count` is `3`.
 
-
-
-**What will be the output**
+#### Q13:**What will be the output**
 
 ```js
 let f = "8";
@@ -341,7 +309,7 @@ console.log(5 < 6 < 7);
 - **Output** : true
 - **Reason** : In JavaScript, the < operator evaluates  expressions from left to right. First, the expression 5 < 6 is  evaluated, resulting in true because 5 is less than 6. Then, the  expression true < 7 is evaluated. In this case, JavaScript performs  type coercion and converts true to the number 1. Therefore, the  expression becomes 1 < 7, which is true.
 
-**What will be the output**
+#### Q14:**What will be the output**
 
 ```js
 console.log(7 > 6 > 5);
@@ -352,7 +320,7 @@ console.log(7 > 6 > 5);
 - **Output** : false
 - **Reason** : In JavaScript, the > operator evaluates  expressions from left to right. First, the expression 7 > 6 is  evaluated, resulting in true because 7 is greater than 6. Then, the  expression true > 5 is evaluated. In this case, JavaScript performs  type coercion and converts true to the number 1. Therefore, the  expression becomes 1 > 5, which is false.
 
-**What will be the output**
+#### Q15:**What will be the output**
 
 ```js
 console.log(0 == false);
@@ -364,7 +332,7 @@ console.log(1 == true);
 - **Output** : true, true
 - **Reason** : The == operator converts operands to a common type  before making the comparison. In both the cases, the boolean value will  be converted to a number, i.e., false is converted to 0 and true is  converted to 1. So, the expression 0 == false is equivalent to 0 == 0  and 1 == true is equivalent to 1 == 1.
 
-**What will be the output**
+#### Q16:**What will be the output**
 
 ```js
 console.log(10 + "5");
@@ -376,9 +344,7 @@ console.log("5" + 10);
 - **Output** : 105, 510
 - **Reason** : Since one operand is a string, the + operator performs string concatenation. 
 
-
-
-**What will be the output**
+#### Q17:**What will be the output**
 
 ```js
 console.log(10 - "5");
@@ -390,9 +356,7 @@ console.log("5" - 10);
 - **Output** : 5, -5
 - **Reason** : In JavaScript, when the subtraction operator - is  used, the operands are converted to numbers before performing the  subtraction 
 
-
-
-**What will be the output**
+#### Q18:**What will be the output**
 
 ```js
 const arr1 = [1,2,3];
@@ -409,7 +373,7 @@ console.log(arr1 == arr2);
 - **Reason for console.log(arr1 == str)** : Javascript compiler  performs type conversion. In this case, it converts the array arr1 and  the string str to their string representations and then compares them.
 - **Reason for console.log(age)** : In Javascript arrays are  objects and objects are compared by reference. In this case, arr1 and  arr2 are pointing to 2 different memory locations
 
-**What will be the output**
+#### Q19:**What will be the output**
 
 ```js
 var x = 0;
