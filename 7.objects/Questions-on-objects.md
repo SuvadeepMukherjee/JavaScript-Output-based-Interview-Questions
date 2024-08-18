@@ -1,6 +1,6 @@
 ## Questions on objects 
 
-Q:Which one is true?
+#### Q1:Which one is true?
 
 ```js
 const bird = {
@@ -30,9 +30,7 @@ mouse[bird.size]`: First it evaluates `bird.size`, which is `"small"`. `mouse["s
 
 However, with dot notation, this doesn't happen. `mouse` does not have a key called `bird`, which means that `mouse.bird` is `undefined`. Then, we ask for the `size` using dot notation: `mouse.bird.size`. Since `mouse.bird` is `undefined`, we're actually asking `undefined.size`. This isn't valid, and will throw an error similar to `Cannot read property "size" of undefined`.
 
-
-
-###### Q:What's the output?
+#### Q2:What's the output?
 
 ```js
 let c = { greeting: 'Hey!' };
@@ -61,9 +59,7 @@ First, variable `c` holds a value to an object. Later, we assign `d` with the sa
 
 When you change one object, you change all of them.
 
-
-
-######  What's the output?
+####  Q3:What's the output?
 
 ```js
 function checkAge(data) {
@@ -93,9 +89,7 @@ The two objects that we are comparing don't have that: the object we passed as a
 
 This is why both `{ age: 18 } === { age: 18 }` and `{ age: 18 } == { age: 18 }` return `false`.
 
-
-
-###### What's the output?
+#### Q4:What's the output?
 
 ```js
 const obj = { 1: 'a', 2: 'b', 3: 'c' };
@@ -120,11 +114,7 @@ All object keys (excluding Symbols) are strings under the hood, even if you don'
 
 It doesn't work that way for a set. There is no `'1'` in our set: `set.has('1')` returns `false`. It has the numeric type `1`, `set.has(1)` returns `true`.
 
-
-
-
-
-###### What's the output?
+#### Q5:What's the output?
 
 ```js
 const obj = { a: 'one', b: 'two', a: 'three' };
@@ -142,9 +132,7 @@ Answer: C
 
 If you have two keys with the same name, the key will be  replaced. It will still be in its first position, but with the last  specified value.
 
-
-
-###### What's the output?
+#### Q6:What's the output?
 
 ```js
 const a = {};
@@ -172,11 +160,7 @@ However, when we stringify an object, it becomes `"[object Object]"`. So what we
 
 Then, we log `a[b]`, which is actually `a["[object Object]"]`. We just set that to `456`, so it returns `456`.
 
-
-
-
-
-###### What's the output?
+#### Q7:What's the output?
 
 ```js
 let person = { name: 'Lydia' };
@@ -209,11 +193,7 @@ Then, we set the variable `person` equal to `null`.
 
 We are only modifying the value of the `person` variable, and not the first element in the array, since that element has a different  (copied) reference to the object. The first element in `members` still holds its reference to the original object. When we log the `members` array, the first element still holds the value of the object, which gets logged.
 
-
-
-
-
-###### What's the output?
+#### Q8:What's the output?
 
 ```js
 const person = {
@@ -237,9 +217,7 @@ Answer: B
 
 With a `for-in` loop, we can iterate through object keys, in this case `name` and `age`. Under the hood, object keys are strings (if they're not a Symbol). On every loop, we set the value of `item` equal to the current key it’s iterating over. First, `item` is equal to `name`, and gets logged. Then, `item` is equal to `age`, which gets logged.
 
-
-
-###### What's the output?
+#### Q9:What's the output?
 
 ```js
 const person = { name: 'Lydia' };
@@ -263,9 +241,7 @@ With the `defineProperty` method, we can add new properties to an object, or mod
 
 Properties added using the `defineProperty` method are immutable by default. You can override this behavior using the `writable`, `configurable` and `enumerable` properties. This way, the `defineProperty` method gives you a lot more control over the properties you're adding to an object.
 
-
-
-###### What's the output?
+#### Q10:What's the output?
 
 ```js
 const settings = {
@@ -293,11 +269,7 @@ If the replacer is an *array*, only the property  names included in the array wi
 
 If the replacer is a *function*, this function gets called on every property in the object you're stringifying. The value  returned from this function will be the value of the property when it's  added to the JSON string. If the value is `undefined`, this property is excluded from the JSON string.
 
-
-
-
-
-###### What's the output?
+#### Q11:What's the output?
 
 ```js
 const box = { x: 10, y: 20 };
@@ -325,9 +297,7 @@ When we create the variable `shape` and set it equal to the frozen object `box`,
 
 Since `shape` is frozen, and since the value of `x` is not an object, we cannot modify the property `x`. `x` is still equal to `10`, and `{ x: 10, y: 20 }` gets logged.
 
-
-
-###### What is the output?
+#### Q12:What is the output?
 
 ```js
 const person = {
@@ -358,9 +328,7 @@ Then, we set `city` equal to the string `"Amsterdam"`. This doesn't change the p
 
 When logging the `person` object, the unmodified object gets returned.
 
-
-
-###### What's the output?
+#### Q13:What's the output?
 
 ```js
 class Person {
@@ -392,11 +360,7 @@ function Person(name) {
 
 ​    Calling a function constructor with `new` results in the creation of an instance of `Person`, `typeof` keyword returns `"object"` for an instance. `typeof member` returns `"object"`.
 
-
-
-
-
-###### What's the output?
+#### Q14:What's the output?
 
 ```js
 const person = {
@@ -418,8 +382,6 @@ for (const [x, y] of Object.entries(person)) {
 
 Answer: A
 
-
-
 `Object.entries(person)` returns an array of nested arrays, containing the keys and objects:
 
 `[ [ 'name', 'Lydia' ], [ 'age', 21 ] ]`
@@ -428,11 +390,7 @@ Using the `for-of` loop, we can iterate over  each element in the array, the sub
 
 The first subarray is `[ "name", "Lydia" ]`, with `x` equal to `"name"`, and `y` equal to `"Lydia"`, which get logged. The second subarray is `[ "age", 21 ]`, with `x` equal to `"age"`, and `y` equal to `21`, which get logged.
 
-
-
-
-
-###### What's the output?
+#### Q15:What's the output?
 
 ```js
 const info = {
@@ -456,9 +414,7 @@ A Symbol is not *enumerable*. The Object.keys method returns all *enumerable* ke
 
 This is one of the many qualities of a symbol: besides  representing an entirely unique value (which prevents accidental name  collision on objects, for example when working with 2 libraries that  want to add properties to the same object), you can also "hide"  properties on objects this way (although not entirely. You can still  access symbols using the `Object.getOwnPropertySymbols()` method).
 
-
-
-###### What's its value?
+#### Q16:What's its value?
 
 ```js
 function compareMembers(person1, person2 = person) {
@@ -491,11 +447,7 @@ This means that both values have a reference to the same spot in memory, thus th
 
 The code block in the `else` statement gets run, and `They are the same!` gets logged.
 
-
-
-
-
-###### What's its value?
+#### Q17:What's its value?
 
 ```js
 const colorConfig = {
@@ -526,11 +478,7 @@ With dot notation, JavaScript tries to find the property  on the object with tha
 
 JavaScript interprets (or unboxes) statements. When we use bracket notation, it sees the first opening bracket `[` and keeps going until it finds the closing bracket `]`. Only then, it will evaluate the statement. If we would've used `colorConfig[colors[1]]`, it would have returned the value of the `red` property on the `colorConfig` object.
 
-
-
-
-
-###### What's the output?
+#### Q18:What's the output?
 
 ```js
 const food = ['🍕', '🍫', '🥑', '🍔'];
@@ -556,9 +504,7 @@ In JavaScript, primitive data types (everything that's not an object) interact b
 
 Then, we change the value of the `favoriteFood` property on the `info` object. The `food` array hasn't changed, since the value of `favoriteFood` was merely a *copy* of the value of the first element in the array, and doesn't have a reference to the same spot in memory as the element on `food[0]`. When we log food, it's still the original array, `['🍕', '🍫', '🥑', '🍔']`.
 
-
-
-###### What does this method do?
+#### Q19:What does this method do?
 
 ```js
 JSON.parse();
@@ -589,11 +535,7 @@ const jsonArray = JSON.stringify({ name: 'Lydia' }); // '{"name":"Lydia"}'
 JSON.parse(jsonArray); // { name: 'Lydia' }
 ```
 
-
-
-
-
-###### What will happen?
+#### Q20:What will happen?
 
 ```js
 let config = {
@@ -616,9 +558,7 @@ Answer: C
 
 Normally when we set objects equal to `null`, those objects get *garbage collected* as there is no reference anymore to that object. However, since the callback function within `setInterval` is an arrow function (thus bound to the `config` object), the callback function still holds a reference to the `config` object. As long as there is a reference, the object won't get garbage collected. Since this is an interval, setting `config` to `null` or `delete`-ing `config.alert` won't garbage-collect the interval, so the interval will still be called. It should be cleared with `clearInterval(config.alert)` to remove it from memory. Since it was not cleared, the `setInterval` callback function will still get invoked every 1000ms (1s).
 
-
-
-###### What's the output?
+#### Q21:What's the output?
 
 ```js
 const person = {
@@ -653,9 +593,7 @@ First, we invoke the `changeAge` function and pass the `person` object as its ar
 
 Then, we invoke the `changeAgeAndName` function, however we don't pass a parameter. Instead, the value of `x` is equal to a *new* object: `{ ...person }`. Since it's a new object, it doesn't affect the values of the properties on the `person` object. `person` is still equal to `{ name: "Lydia", age: 22 }`.
 
-
-
-###### What's the output?
+#### Q22:What's the output?
 
 ```js
 const config = {
@@ -679,9 +617,7 @@ Answer: D
 
 The `language` method is a `setter`. Setters don't hold an actual value, their purpose is to *modify* properties. When calling a `setter` method, `undefined` gets returned.
 
-
-
-###### What's the output?
+#### Q23:What's the output?
 
 ```js
 const myFunc = ({ x, y, z }) => {
@@ -702,9 +638,7 @@ Answer: D
 
 `myFunc` expects an object with properties `x`, `y` and `z` as its argument. Since we're only passing three separate numeric values (1, 2, 3) instead of one object with properties `x`, `y` and `z` ({x: 1, y: 2, z: 3}), `x`, `y` and `z` have their default value of `undefined`.
 
-
-
-###### What's the output?
+#### Q24:What's the output?
 
 ```js
 class Counter {
@@ -746,11 +680,7 @@ We invoke `counterTwo.increment()`, which sets `count` to `3`. Then, we log the 
 
 ![obj-ref-2](../assets/obj-ref-2.png)
 
-
-
-
-
-###### What's the output?
+#### Q25:What's the output?
 
 ```js
 const handler = {
@@ -781,11 +711,7 @@ First, we added a new property `name` to the proxy object (`person.name = "Lydia
 
 Then, we access a property value on the proxy object, and the `get` property on the handler object is invoked. `"Accessed a property!"` gets logged.
 
-
-
-
-
-###### Which of the following will modify the `person` object?
+#### Q26:Which of the following will modify the `person` object?
 
 ```js
 const person = { name: 'Lydia Hallie' };
@@ -806,11 +732,7 @@ With `Object.seal` we can prevent new properties from being *added*, or existing
 
 However, you can still modify the value of existing properties.
 
-
-
-
-
-###### Which of the following will modify the `person` object?
+#### Q27:Which of the following will modify the `person` object?
 
 ```js
 const person = {
@@ -836,11 +758,7 @@ The `Object.freeze` method *freezes* an object. No properties can be added, modi
 
 However, it only *shallowly* freezes the object, meaning that only *direct* properties on the object are frozen. If the property is another object, like `address` in this case, the properties on that object aren't frozen, and can be modified.
 
-
-
-
-
-###### What's the output?
+#### Q28:What's the output?
 
 ```js
 const user = {
@@ -876,11 +794,7 @@ Answer: B
 
 The `updateUser` function updates the values of the `email` and `password` properties on user, if their values are passed to the function, after which the function returns the `user` object. The returned value of the `updateUser` function is the `user` object, which means that the value of updatedUser is a reference to the same `user` object that `user` points to. `updatedUser === user` equals `true`.
 
-
-
-
-
-###### What's the output?
+#### Q29:What's the output?
 
 ```js
 const animals = {};
@@ -910,11 +824,7 @@ Since the value of  `dog` is an object,  `animals[dog]` actually means that we�
 
 Logging `animals[dog]`, or actually `animals["[object Object]"]` since converting the `dog` object to a string results `"[object Object]"`, returns the `{ emoji: "🐈", name: "Sara" }`.
 
-
-
-
-
-###### What should the value of `method` be to log `{ name: "Lydia", age: 22 }`?
+#### Q30:What should the value of `method` be to log `{ name: "Lydia", age: 22 }`?
 
 ```js
 const keys = ["name", "age"]
@@ -939,11 +849,7 @@ The `fromEntries` method turns a 2d array into  an object. The first element in 
 
 This creates an array of subarrays containing the correct keys and values, which results in `{ name: "Lydia", age: 22 }`
 
-
-
-
-
-###### What's the output?
+#### Q31:What's the output?
 
 ```js
 const createMember = ({ email, address = {}}) => {
@@ -971,11 +877,7 @@ Answer: C
 
 The default value of `address` is an empty object `{}`. When we set the variable `member` equal to the object returned by the `createMember` function, we didn't pass a value for the address, which means that the value of the address is the default empty object `{}`. An empty object is a truthy value, which means that the condition of the `address ? address : null` conditional returns `true`. The value of the address is the empty object `{}`.
 
-
-
-
-
-**What will be the output**
+#### Q32:**What will be the output**
 
 ```js
 let a = { x: 1, y: 2 }
@@ -1002,7 +904,7 @@ console.log({} === {});
 - **Output** : false, false
 - **Reason** : When you compare objects using == or ===, it checks if they refer to the exact same object. So even if they are looking  same, they are pointing to different memory locations.
 
-**What will be the output (shallow copy of an object)**
+#### Q33:**What will be the output (shallow copy of an object)**
 
 ```js
 const userDetails = {
@@ -1031,9 +933,7 @@ console.log(cloneUserDetails.address.city);
 - **case 1** : Although userDetails.age was changed to 22,  cloneUserDetails still holds the original value of 20. This is because  the spread syntax only creates a shallow copy, so the age property of  cloneUserDetails remains unchanged.
 - **case 2** : The nested address object is still referenced by  cloneUserDetails, so when the city property of userDetails.address is  changed, it reflects in cloneUserDetails.address as well. Therefore, the output is "Banglore".
 
-
-
-**What will be the output**
+#### Q34:**What will be the output**
 
 ```js
 const a = {x : 1};
@@ -1048,9 +948,7 @@ console.log(a.x === b.x)
 - **Reason for console.log(a === b)** : This compares whether a  and b refer to the exact same object in memory. They are two different  objects in memory, so the comparison evaluates to false
 - **Reason for console.log(a.x === b.x)** : This compares the x  property of objects a and b. Since both a.x and b.x have the same value  i.e., 1, so the comparison evaluates to true.
 
-
-
-**What will be the output**
+#### Q35:**What will be the output**
 
 ```js
 const arr = ["A","B","C","D","E"]
@@ -1062,9 +960,7 @@ console.log(Object.keys(arr));
 - **Output** : [ '0', '1', '2', '3', '4' ]
 - **Reason** : In JavaScript, arrays are a special type of object. Object.keys() on an array returns an array of strings representing the  indices of the array elements. 
 
-
-
-#### Q2:What's the output?
+#### Q36:What's the output?
 
 ```js
 function getInfo(member, year) {
@@ -1095,11 +991,7 @@ The variable `birthYear` has a reference to the value `"1997"`. The argument `ye
 
 The value of `person` is an object. The argument `member` has a (copied) reference to the *same* object. When we modify a property of the object `member` has a reference to, the value of `person` will also be modified, since they both have a reference to the same object. `person`'s `name` property is now equal to the value `"Lydia"`
 
-
-
-
-
-#### Q2:What's the output?
+#### Q37:What's the output?
 
 ```js
 const value = { number: 10 };
