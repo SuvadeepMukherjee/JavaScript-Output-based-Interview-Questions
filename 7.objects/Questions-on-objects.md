@@ -1057,7 +1057,7 @@ console.log(person) //{name:"Lydia",age:21}
 console.log(Object.keys(person)) //name
 ```
 
-#### Q40: What does Object.keys() return ? 
+#### Q39: What does Object.keys() return ? 
 
 **Answer**:
 
