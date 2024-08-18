@@ -1024,3 +1024,53 @@ The default argument is evaluated at *call time*! Every time we call the functio
 The third time we invoke multiply, we do pass an argument: the object called `value`. The `*=` operator is actually shorthand for `x.number = x.number * 2`: we modify the value of `x.number`, and log the multiplied value `20`.
 
 The fourth time, we pass the `value` object again. `x.number` was previously modified to `20`, so `x.number *= 2` logs `40`.
+
+#### Q38: Complete the following code snippet ? 
+
+```js
+const person ={
+    name:"Lydia"
+}
+
+//define a property age with a value of 21 on the person object 
+
+
+//what will be the  person object
+
+//what will be logged if we only log the keys of the person object 
+```
+
+**Answer**:
+
+```js
+const person ={
+    name:"Lydia"
+}
+
+//define a property age with a value of 21 on the person object 
+Object.defineProperty(person,"age",{value:21})
+
+//what will be the  person object
+console.log(person) //{name:"Lydia",age:21}
+
+//what will be logged if we only log the keys of the person object 
+console.log(Object.keys(person)) //name
+```
+
+#### Q40: What does Object.keys() return ? 
+
+**Answer**:
+
+The **`Object.keys()`** static method returns an array of a given object's own enumerable string-keyed property names.
+
+```js
+const object1 = {
+  a: 'somestring',
+  b: 42,
+  c: false,
+};
+
+console.log(Object.keys(object1));
+// Expected output: Array ["a", "b", "c"]
+```
+
