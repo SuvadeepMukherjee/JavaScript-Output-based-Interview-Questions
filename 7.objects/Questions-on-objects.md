@@ -1140,3 +1140,63 @@ person.name = "Evan Bacon"
 With `Object.seal` we can prevent new properties from being *added*, or existing properties to be *removed*.
 
 However, you can still modify the value of existing properties.
+
+#### Q44:Fill in the blanks 
+
+The ____ method turns a 2d array into  an object.  The first element in each subarray will be the key, and the  second  element in each subarray will be the value
+
+**Answer**:
+
+The Object.fromEntries() method turns a 2d array into  an object.  The first element in each subarray will be the key, and the  second  element in each subarray will be the value
+
+#### Q45:Fill the code snippet ? 
+
+```js
+const keys = ["name", "age"];
+const values = ["Lydia", 22];
+
+//output should be { name: 'Lydia', age: 22 }
+
+
+```
+
+**Answer**:
+
+```js
+const keys = ["name", "age"];
+const values = ["Lydia", 22];
+
+//output should be { name: 'Lydia', age: 22 }
+
+const mappedArray = keys.map((_,i)=>{
+    return [keys[i],values[i]];
+})
+
+console.log(mappedArray);
+
+const result = Object.fromEntries(mappedArray);
+console.log(result);
+
+//const result = Object.entries((keys.map(_,i)=>[keys[i],values[i]]));
+//console.log(result);
+```
+
+#### Q46:What is Object.assign() and what does it return ? 
+
+**Answer**:
+
+he **`Object.assign()`** static method  copies all enumerable  own properties from one or more  *source objects* to a *target object*. It returns the modified target  object.
+
+```js
+const target = { a: 1, b: 2 };
+const source = { b: 4, c: 5 };
+
+const returnedTarget = Object.assign(target, source);
+
+console.log(target);
+// Expected output: Object { a: 1, b: 4, c: 5 }
+
+console.log(returnedTarget === target);
+// Expected output: true
+```
+
