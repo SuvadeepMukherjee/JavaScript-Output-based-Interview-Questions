@@ -28,11 +28,7 @@ With arrow functions, the `this` keyword refers to its current surrounding scope
 
 Since there is no value `radius` in the scope of the arrow function, `this.radius` returns `undefined` which, when multiplied by `2 * Math.PI`, results in `NaN`.
 
-
-
-
-
-###### What is the output?
+#### Q2:What is the output?
 
 ```js
 var status = '😎';
@@ -65,11 +61,7 @@ The value of the `this` keyword is dependent on where you use it. In a **method*
 
 With the `call` method, we can change the object to which the `this` keyword refers. In **functions**, the `this` keyword refers to the *the object that the function belongs to*. We declared the `setTimeout` function on the *global object*, so within the `setTimeout` function, the `this` keyword refers to the *global object*. On the global object, there is a variable called *status* with the value of `"😎"`. When logging `this.status`, `"😎"` gets logged.
 
-
-
-
-
-###### What's the output?
+#### Q3:What's the output?
 
 ```js
 const person = {
@@ -103,9 +95,7 @@ With the optional chaining operator `?.`, we no longer have to explicitly check 
 
 `person.pet?.name`: `person` has a property named `pet`: `person.pet` is not nullish. It has a property called `name`, and returns `Mara`. `person.pet?.family?.name`: `person` has a property named `pet`: `person.pet` is not nullish. `pet` does *not* have a property called `family`, `person.pet.family` is nullish. The expression returns `undefined`. `person.getFullName?.()`: `person` has a property named `getFullName`: `person.getFullName()` is not nullish and can get invoked, which returns `Lydia Hallie`. `member.getLastName?.()`: variable `member` is non-existent therefore a `ReferenceError` gets thrown!
 
-
-
-###### What's the output?
+#### Q4:What's the output?
 
 ```js
 const user = {
