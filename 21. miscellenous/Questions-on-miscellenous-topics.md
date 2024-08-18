@@ -288,7 +288,7 @@ console.log(adventurer.someNonExistentMethod?.());
 // Expected output: undefined
 ```
 
-###### What's the value of `sum`?
+#### Q13:What's the value of `sum`?
 
 ```js
 const sum = eval('10*10+5')
