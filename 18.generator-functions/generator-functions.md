@@ -1,6 +1,6 @@
 ## Questions on generator functions
 
-###### What's the output?
+#### Q1:What's the output?
 
 ```js
 function* generator(i) {
@@ -29,9 +29,7 @@ First, we initialize the generator function with `i` equal to `10`. We invoke th
 
 Then, we invoke the function again with the `next()` method. It starts to continue where it stopped previously, still with `i` equal to `10`. Now, it encounters the next `yield` keyword, and yields `i * 2`. `i` is equal to `10`, so it returns `10 * 2`, which is `20`. This results in `10, 20`.
 
-
-
-###### How can we log the values that are commented out after the console.log statement?
+#### Q2:How can we log the values that are commented out after the console.log statement?
 
 ```js
 function* startGame() {
@@ -62,9 +60,7 @@ Every line is executed, until it finds the first `yield` keyword. There is a `yi
 
 When we call `game.next("Yes").value`, the previous `yield` is replaced with the value of the parameters passed to the `next()` function, `"Yes"` in this case. The value of the variable `answer` is now equal to `"Yes"`. The condition of the if-statement returns `false`, and `JavaScript loves you back ❤️` gets logged.
 
-
-
-###### What's the output?
+#### Q3:What's the output?
 
 ```js
 function* generatorOne() {
@@ -109,11 +105,7 @@ console.log(two.next().value); // 'c'
 console.log(two.next().value); // undefined
 ```
 
-
-
-
-
-###### What's the output?
+#### Q4:What's the output?
 
 ```js
 async function* range(start, end) {
@@ -141,9 +133,7 @@ Answer: C
 
 The generator function `range` returns an async object with promises for each item in the range we pass: `Promise{1}`, `Promise{2}`, `Promise{3}`. We set the variable `gen` equal to the async object, after which we loop over it using a `for await ... of` loop. We set the variable `item` equal to the returned Promise values: first `Promise{1}`, then `Promise{2}`, then `Promise{3}`. Since we're *awaiting* the value of `item`, the resolved promise, the resolved *values* of the promises get returned: `1`, `2`, then `3`.
 
-
-
-###### What's missing?
+#### Q5:What's missing?
 
 ```js
 const teams = [
@@ -181,11 +171,7 @@ In order to iterate over the `members` in each element in the `teams` array, we 
 
 If we would've written `yield`, `return yield`, or `return`, the entire generator function would've gotten returned the first time we called the `next` method.
 
-
-
-
-
-###### What do we need to add to the `person` object to get `["Lydia Hallie", 21]` as the output of `[...person]`?
+#### Q6:What do we need to add to the `person` object to get `["Lydia Hallie", 21]` as the output of `[...person]`?
 
 ```js
 const person = {
