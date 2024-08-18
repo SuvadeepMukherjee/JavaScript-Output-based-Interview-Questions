@@ -1,6 +1,6 @@
 ## Questions on events
 
-###### What are the three phases of event propagation?
+#### Q1:What are the three phases of event propagation?
 
 - A: Target > Capturing > Bubbling
 - B: Bubbling > Target > Capturing
@@ -15,11 +15,7 @@ During the **capturing** phase, the event goes through the ancestor elements dow
 
 ![event-propagation](../assets/event-propagation.png)
 
-
-
-
-
-###### What is the event.target when clicking the button?
+#### Q2What is the event.target when clicking the button?
 
 ```html
 <div onclick="console.log('first div')">
@@ -42,11 +38,7 @@ Answer: C
 
 The deepest nested element that caused the event is the target of the event. You can stop bubbling by `event.stopPropagation`
 
-
-
-
-
-###### When you click the paragraph, what's the logged output?
+#### Q3:When you click the paragraph, what's the logged output?
 
 ```html
 <div onclick="console.log('div')">
