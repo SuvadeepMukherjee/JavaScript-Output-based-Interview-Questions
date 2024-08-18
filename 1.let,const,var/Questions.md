@@ -1,6 +1,6 @@
 ## Variable Hoisting and Temporal Dead Zone 
 
-###### 1. What's the output?
+#### Q1. What's the output?
 
 ```js
 function sayHi() {
@@ -26,9 +26,7 @@ Within the function, we first declare the `name` variable with the `var` keyword
 
 Variables with the `let` keyword (and `const`) are hoisted, but unlike `var`, don't get *initialized*. They are not accessible before the line we declare (initialize) them.  This is called the "temporal dead zone". When we try to access the  variables before they are declared, JavaScript throws a `ReferenceError`.
 
-
-
-###### The JavaScript global execution context creates two things for you: the global object, and the "this" keyword.
+#### Q2:The JavaScript global execution context creates two things for you: the global object, and the "this" keyword.
 
 - A: true
 - B: false
@@ -40,9 +38,7 @@ Answer: A
 
 The base execution context is the global execution context: it's what's accessible everywhere in your code.
 
-
-
-###### What is the output?
+#### Q3:What is the output?
 
 ```js
 function checkAge(age) {
@@ -69,9 +65,7 @@ Answer: C
 
 Variables with the `const` and `let` keywords are *block-scoped*. A block is anything between curly brackets (`{ }`). In this case, the curly brackets of the if/else statements. You cannot  reference a variable outside of the block it's declared in, a  ReferenceError gets thrown.
 
-
-
-###### What's the output?
+#### Q4:What's the output?
 
 ```js
 let name = 'Lydia';
@@ -109,9 +103,7 @@ function getName() {
 getName(); // Lydia
 ```
 
-​    
-
-###### What's the output?
+####   Q5:What's the output?
 
 ```js
 const randomValue = 21;
@@ -135,11 +127,7 @@ Answer: D
 
 Variables declared with the `const` keyword are not referenceable before their initialization: this is called the *temporal dead zone*. In the `getInfo` function, the variable `randomValue` is scoped in the functional scope of `getInfo`. On the line where we want to log the value of `typeof randomValue`, the variable `randomValue` isn't initialized yet: a `ReferenceError` gets thrown! The engine didn't go down the scope chain since we declared the variable `randomValue` in the `getInfo` function.
 
-
-
-
-
-**What will be the output**
+#### Q6:**What will be the output**
 
 ```js
 x = 10;
@@ -168,7 +156,7 @@ console.log(a, "outside");
 - **Output** : 20, "inside" and 10, "outside"
 - **Reason** : The variable "a" declared inside "if" has block scope and does not affect the value of the outer "a" variable.
 
-**What will be the output**
+#### Q7:**What will be the output**
 
 ```js
 var a = "xyz";
@@ -181,9 +169,7 @@ console.log(a)
 - **Output** : "pqr"
 - **Reason** : Both the variables are declared using "var" keyword with the same name "a". The second variable declaration will override  the first variable declaration.
 
-
-
-**What will be the output**
+#### Q8:**What will be the output**
 
 ```js
 console.log(printName());
@@ -197,7 +183,7 @@ function printName(){
 - **Output** : Hi my name is Bob
 - **Reason** : Regular functions are hoisted to the top. And you can access and call them even before they are declared. 
 
-**What will be the output**
+#### Q9:**What will be the output**
 
 ```js
 console.log(printName());
@@ -211,9 +197,7 @@ const printName = () => {
 - **Output** : ReferenceError: Cannot access 'printName' before initialization
 - **Reason** : Arrow functions cannot be accessed before they are initialised. 
 
-
-
-**What will be the output**
+#### Q10:**What will be the output**
 
 ```js
 function hello(){
@@ -231,7 +215,7 @@ hello();
 - **Reason for console.log(name)** : The variable name (declared  with var) is hoisted to the top, so JavaScript knows it exists, but it  hasn't been assigned a value yet, so it prints undefined
 - **Reason for console.log(age)** : The variable age (declared  with let) is also hoisted to the top of its scope, but unlike var, it is not initialized until the line where it is declared.
 
-**What will be the output**
+#### Q11:**What will be the output**
 
 ```js
 var a = 10;
