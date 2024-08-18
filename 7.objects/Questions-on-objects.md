@@ -500,7 +500,7 @@ Answer: A
 
 We set the value of the `favoriteFood` property on the `info` object equal to the string with the pizza emoji, `'🍕'`. A string is a primitive data type. In JavaScript, primitive data types don't interact by reference.
 
-In JavaScript, primitive data types (everything that's not an object) interact by *value*. In this case, we set the value of the `favoriteFood` property on the `info` object equal to the value of the first element in the `food` array, the string with the pizza emoji in this case (`'🍕'`). A string is a primitive data type, and interact by value (see my [blogpost](https://www.theavocoder.com/complete-javascript/2018/12/21/by-value-vs-by-reference) if you're interested in learning more)
+In JavaScript, primitive data types (everything that's not an object) interact by *value*. In this case, we set the value of the `favoriteFood` property on the `info` object equal to the value of the first element in the `food` array, the string with the pizza emoji in this case (`'🍕'`). A string is a primitive data type, and interact by value 
 
 Then, we change the value of the `favoriteFood` property on the `info` object. The `food` array hasn't changed, since the value of `favoriteFood` was merely a *copy* of the value of the first element in the array, and doesn't have a reference to the same spot in memory as the element on `food[0]`. When we log food, it's still the original array, `['🍕', '🍫', '🥑', '🍔']`.
 
@@ -1081,3 +1081,20 @@ console.log(Object.keys(object1));
 **Answer**:
 
 `Object.freeze` makes it impossible to add, remove, or modify properties of an object (unless the property's value is another object).
+
+#### Q41: What does Object.entries() return ? 
+
+**Answer**: `Object.entries(person)` returns an array of nested arrays, containing the keys and objects:
+
+```js
+const person = {
+  name: 'Lydia',
+  age: 21,
+};
+
+for (const [x, y] of Object.entries(person)) {
+  console.log(x, y);
+}
+```
+
+name` `Lydia` and `age` `21
