@@ -1,6 +1,6 @@
 ## Questions on call-apply-bind
 
-###### What's the output?
+#### Q1:What's the output?
 
 ```js
 const person = { name: 'Lydia' };
