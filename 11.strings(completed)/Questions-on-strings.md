@@ -1,6 +1,6 @@
 ## Questions on Strings
 
-###### What's the output?
+#### Q1:What's the output?
 
 ```js
 const name = 'Lydia Hallie';
@@ -22,11 +22,7 @@ With the `padStart` method, we can add padding to the beginning of a string. The
 
 If the argument passed to the `padStart` method is smaller than the length of the array, no padding will be added.
 
-
-
-
-
-###### What's the output?
+#### Q2:What's the output?
 
 ```js
 console.log('🥑' + '💻');
@@ -45,11 +41,7 @@ Answer: A
 
 With the `+` operator, you can concatenate strings. In this case, we are concatenating the string `"🥑"` with the string `"💻"`, resulting in `"🥑💻"`.
 
-
-
-
-
-###### What's the output?
+#### Q3:What's the output?
 
 ```js
 console.log(String.raw`Hello\nworld`);
@@ -80,11 +72,7 @@ With `String.raw`, it would simply ignore the escape and print:
 
 In this case, the string is `Hello\nworld`, which gets logged.
 
-
-
-
-
-###### What's the output?
+#### Q4:What's the output?
 
 ```js
 console.log('I want pizza'[0]);
@@ -103,9 +91,7 @@ In order to get a character at a specific index of a  string, you can use bracke
 
 Note that this method is not supported in IE7 and below. In that case, use `.charAt()`.
 
-
-
-###### What's its value?
+#### Q5:What's its value?
 
 ```js
 console.log('❤️' === '❤️');
