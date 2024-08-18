@@ -390,3 +390,32 @@ if(y){
 
 - **Output** : 10
 - **Reason** : x = 0 is falsy and doesn't trigger the console.log(x), while y = 10 is truthy and triggers the console.log(y).
+
+#### Q20:What is unary plus operator ? 
+
+**Answer**: The Unary plus(+) operator precedes its operand and evaluates to its operand but attempts to convert it into a number if it isnt already 
+
+Usage with numbers : 
+
+```js
+const x = 1;
+const y = -1;
+
+console.log(+x);
+// 1
+console.log(+y);
+// -1
+```
+
+Usuage with Non Numbers :
+
+```js
+true  // 1
++false // 0
++null  // 0
++[]    // 0
++function (val) { return val; } // NaN
++1n    // throws TypeError: Cannot convert BigInt value to number
+```
+
+If it cannot parse a particular value, it will evaluate to `NaN`. Unlike other arithmetic operators, which work with both numbers and BigInts, using the `+` operator on BigInt values throws a `TypeError`.
