@@ -419,3 +419,14 @@ true  // 1
 ```
 
 If it cannot parse a particular value, it will evaluate to `NaN`. Unlike other arithmetic operators, which work with both numbers and BigInts, using the `+` operator on BigInt values throws a `TypeError`.
+
+#### Q21:Rules of Type Coercion ? 
+
+**Answer**:
+
+The rules governing type coercion in JavaScript include:
+
+1. Any `numbers, boolean values` are converted to strings in where  strings are expected, such as `concatenation with strings` or `when using  string functions`.
+2. `Non-numeric` values are converted to numbers in where numbers are required, such as `arithmetic operations or comparisons.`
+3. `Values` are converted to booleans where booleans are expected, such as `logical operations or conditional statements.`
+4. If a conversion is not possible, it results in `NaN` (Not-a-Number), typically in arithmetic operations involving non-numeric values.
