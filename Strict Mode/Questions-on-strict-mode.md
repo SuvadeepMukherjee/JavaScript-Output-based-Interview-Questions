@@ -1,2 +1,0 @@
-## Questions on Strict Mode
-
