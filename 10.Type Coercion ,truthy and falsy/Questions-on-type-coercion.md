@@ -430,3 +430,18 @@ The rules governing type coercion in JavaScript include:
 2. `Non-numeric` values are converted to numbers in where numbers are required, such as `arithmetic operations or comparisons.`
 3. `Values` are converted to booleans where booleans are expected, such as `logical operations or conditional statements.`
 4. If a conversion is not possible, it results in `NaN` (Not-a-Number), typically in arithmetic operations involving non-numeric values.
+
+#### Q22:What are the 8 falsy values ? 
+
+**Answer**:
+
+There are 8 falsy values:
+
+- `undefined`
+- `null`
+- `NaN`
+- `false`
+- `''` (empty string)
+- `0`
+- `-0`
+- `0n` (BigInt(0))
