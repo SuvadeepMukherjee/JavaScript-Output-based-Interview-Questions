@@ -1,4 +1,4 @@
-## Variable Hoisting and Temporal Dead Zone 
+## Questions on scoping, shadowing,hoisting,execution context,temporal dead zone
 
 #### Q1. What's the output?
 
