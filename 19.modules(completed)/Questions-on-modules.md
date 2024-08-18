@@ -2,7 +2,7 @@
 
 
 
-###### What's the output?
+#### Q1:What's the output?
 
 ```js
 // counter.js
@@ -32,9 +32,7 @@ An imported module is *read-only*: you cannot modify the imported module. Only t
 
 When we try to increment the value of `myCounter`, it throws an error: `myCounter` is read-only and cannot be modified.
 
-
-
-###### What's the output?
+#### Q2:What's the output?
 
 ```js
 // index.js
@@ -60,9 +58,7 @@ With the `import` keyword, all imported modules are *pre-parsed*. This means tha
 
 This is a difference between `require()` in CommonJS and `import`! With `require()`, you can load dependencies on demand while the code is being run. If we had used `require` instead of `import`, `running index.js`, `running sum.js`, `3` would have been logged to the console.
 
-
-
-###### What's the output?
+#### Q3:What's the output?
 
 ```js
 // module.js
@@ -88,11 +84,7 @@ With the `import * as name` syntax, we import *all exports* from the `module.js`
 
 The `data` object has a `default` property for the default export, other properties have the names of the named exports and their corresponding values.
 
-
-
-
-
-###### How can we invoke `sum` in `sum.js` from `index.js?`
+#### Q4:How can we invoke `sum` in `sum.js` from `index.js?`
 
 ```js
 // sum.js
