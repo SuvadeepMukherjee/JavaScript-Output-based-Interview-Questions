@@ -1,6 +1,6 @@
 ## Questions on Asynchronous Javascript
 
-###### What's the output?
+#### Q1:What's the output?
 
 ```js
 const foo = () => console.log('First');
@@ -47,9 +47,7 @@ This is where an event loop starts to work. An **event loop** looks at the stack
 
 `bar` gets invoked, `"Second"` gets logged, and it's popped off the stack.
 
-
-
-###### What does the `setInterval` method return in the browser?
+#### Q2:What does the `setInterval` method return in the browser?
 
 ```js
 setInterval(() => console.log('Hi'), 1000);
@@ -66,11 +64,7 @@ Answer: A
 
 It returns a unique id. This id can be used to clear that interval with the `clearInterval()` function.
 
-
-
-
-
-###### What does this return?
+### Q3:What does this return?
 
 ```js
 const firstPromise = new Promise((res, rej) => {
@@ -95,11 +89,7 @@ Answer: B
 
 When we pass multiple promises to the `Promise.race` method, it resolves/rejects the *first* promise that resolves/rejects. To the `setTimeout` method, we pass a timer: 500ms for the first promise (`firstPromise`), and 100ms for the second promise (`secondPromise`). This means that the `secondPromise` resolves first with the value of `'two'`. `res` now holds the value of `'two'`, which gets logged.
 
-
-
-
-
-###### What's the output?
+#### Q4:What's the output?
 
 ```js
 async function getData() {
@@ -127,9 +117,7 @@ If we wanted to get access to the resolved value `"I made it"`, we could have us
 
 This would've logged `"I made it!"`
 
-
-
-###### What kind of information would get logged?
+#### Q5:What kind of information would get logged?
 
 ```js
 fetch('https://www.website.com/api/user/1')
@@ -148,9 +136,7 @@ Answer: C
 
 The value of `res` in the second `.then` is equal to the returned value of the previous `.then`. You can keep chaining `.then`s like this, where the value is passed to the next handler.
 
-
-
-###### What's the value of output?
+#### Q6:What's the value of output?
 
 ```js
 const myPromise = () => Promise.resolve('I have resolved!');
@@ -188,9 +174,7 @@ With the await keyword in `secondFunction`, we literally pause the execution of 
 
 This means that it waited for the `myPromise` to resolve with the value `I have resolved`, and only once that happened, we moved to the next line: `second` got logged.
 
-
-
-###### What's its value?
+#### Q7:What's its value?
 
 ```js
 Promise.resolve(5);
@@ -209,9 +193,7 @@ We can pass any type of value we want to `Promise.resolve`, either a promise or 
 
 In this case, we just passed the numerical value `5`. It returns a resolved promise with the value `5`.
 
-
-
-###### What's the output?
+#### Q8:What's the output?
 
 ```js
 const myPromise = Promise.resolve('Woah some cool data');
@@ -238,9 +220,7 @@ Answer: C
 
 In the `try` block, we're logging the awaited value of the `myPromise` variable: `"Woah some cool data"`. Since no errors were thrown in the `try` block, the code in the `catch` block doesn't run. The code in the `finally` block *always* runs, `"Oh finally!"` gets logged.
 
-
-
-###### What's the output?
+#### Q9:What's the output?
 
 ```js
 const myPromise = Promise.resolve(Promise.resolve('Promise'));
@@ -285,11 +265,7 @@ Then the call stack is empty. Promises are *microtasks* so they are resolved fir
 
 Now, since `funcTwo` popped off the call stack, the call stack is empty. The callbacks waiting in the queue (`() => console.log("Timeout 1!")` from `funcOne`, and `() => console.log("Timeout 2!")` from `funcTwo`) get added to the call stack one by one. The first callback logs `Timeout 1!`, and gets popped off the stack. Then, the second callback logs `Timeout 2!`, and gets popped off the stack.
 
-
-
-
-
-###### What's the output?
+#### Q10:What's the output?
 
 ```js
 const promise1 = Promise.resolve('First')
@@ -319,9 +295,7 @@ Answer: D
 
 The `Promise.all` method runs the passed promises in parallel. If one promise fails, the `Promise.all` method *rejects* with the value of the rejected promise. In this case, `promise3` is rejected with the value `"Third"`. We’re catching the rejected value in the chained `catch` method on the `runPromises` invocation to catch any errors  within the `runPromises` function. Only `"Third"` gets logged, since `promise3` is rejected with this value.
 
-
-
-**What will be the output**
+#### Q11:**What will be the output**
 
 ```js
 function hello() {
