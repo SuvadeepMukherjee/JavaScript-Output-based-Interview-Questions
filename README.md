@@ -32,7 +32,7 @@
 
 | Chapters                                           | Status |
 | -------------------------------------------------- | ------ |
-| let,const,var                                      |        |
+| let,const,var                                      | ✅      |
 | Arrays                                             |        |
 | Functions                                          |        |
 | Closures                                           |        |
