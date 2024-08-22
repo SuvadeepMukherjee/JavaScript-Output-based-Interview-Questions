@@ -1,6 +1,6 @@
 ## Theory about generator functions
 
-Normal functions follow something called a **run-to-completion** model: when we invoke a function, it will always run until it completes .Generator functions  don't follow the **run-to-completion** model! 
+Normal functions follow something called a **run-to-completion** model: when we invoke a function, it will always run until it completes .generator functions  don't follow the **run-to-completion** model! 
 
 
 
