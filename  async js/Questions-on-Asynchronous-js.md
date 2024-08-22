@@ -329,3 +329,76 @@ promise.catch(error => console.log(error.message));
 `Error occurred`
 
 `Error occurred`
+
+#### Q13:Guess the output 
+
+```js
+console.log("start");
+
+const promise1 = new Promise((resolve, reject) => {
+
+  console.log(1);
+
+});
+
+console.log("end");
+```
+
+**Answer**:
+
+start 1 end
+
+#### Q14:What is the output of this code snippet ? 
+
+```js
+function performTask() {
+
+  return new Promise(function (resolve, reject) {
+
+    reject();
+
+  });
+
+}
+
+let taskPromise = performTask();
+
+taskPromise
+
+  .then(function () {
+
+    console.log("Success 1");
+
+  })
+
+  .then(function () {
+
+    console.log("Success 2");
+
+  })
+
+  .then(function () {
+
+    "Success 3";
+
+  })
+
+  .catch(function () {
+
+    console.log("Error 1");
+
+  })
+
+  .then(function () {
+
+    console.log("Success 4");
+
+  });
+```
+
+**Answer**:
+
+`Error 1`
+
+`Success 4`
+
