@@ -488,3 +488,105 @@ promise
 2
 4
 ```
+
+#### Q18:What is the output of the following code ? 
+
+```js
+console.log('Start');
+setTimeout(() => {
+ console.log('Timeout');
+}, 0);
+Promise.resolve().then(() => {
+ console.log('Promise resolved');
+});
+console.log('End');
+```
+
+**Answer**:
+
+Start End Promise resolved Timeout
+
+#### Q19:What is the output of this code snippet ? 
+
+```js
+let firstTask = new Promise(function(resolve, reject) {
+  setTimeout(resolve, 500, 'Task One');
+});
+
+let secondTask;
+
+let thirdTask = new Promise(function(resolve, reject) {
+  setTimeout(resolve, 1200, 'Task Three');
+});
+
+let fourthTask = new Promise(function(resolve, reject) {
+  setTimeout(reject, 300, 'Task Four');
+});
+
+let fifthTask = new Promise(function(resolve, reject) {
+  setTimeout(resolve, 1000, 'Task Two');
+});
+
+let combinedPromise = Promise.all([firstTask, secondTask, thirdTask, fourthTask, fifthTask]);
+
+combinedPromise
+  .then(function(data) {
+    data.forEach(function(value) {
+      console.log('Result:', value);
+    });
+  })
+  .catch(function(error) {
+    console.error('Error:', error);
+  });
+```
+
+**Answer**:
+
+Error: Task Four
+
+#### Q20:What is the output of the following code ? 
+
+```js
+const promise1 = new Promise(resolve => setTimeout(resolve, 100, 'One'));
+const promise2 = new Promise(resolve => setTimeout(resolve, 200, 'Two'));
+
+Promise.race([promise1, promise2])
+  .then(value => console.log(value))
+  .catch(error => console.error(error));
+```
+
+**Answer**:
+
+`One`
+
+#### Q21:What is the output of the following code ? 
+
+```js
+const promise1 = Promise.resolve(1);
+const promise2 = new Promise(resolve => setTimeout(resolve, 200, 2));
+const promise3 = new Promise((resolve, reject) => setTimeout(reject, 100, 'Error'));
+
+Promise.all([promise1, promise2, promise3])
+  .then(values => console.log(values))
+  .catch(error => console.error(error));
+```
+
+**Answer**:
+
+Error
+
+#### Q22:What is the output of the following code ? 
+
+```js
+Promise.resolve(1)
+  .then(value => {
+    console.log(value);
+    return Promise.resolve(2);
+  })
+  .then(value => console.log(value));
+```
+
+**Answer**:
+
+1 2
+
