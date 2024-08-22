@@ -46,7 +46,7 @@
 | Object Oriented Programming                        | ✅      |
 | Call apply and bind                                | ✅      |
 | Increment and decrement operators                  | ✅      |
-| data structures                                    |        |
+| data structures                                    | ✅      |
 | events                                             |        |
 | iife                                               |        |
 | Generator functions                                |        |
