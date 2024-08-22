@@ -12,3 +12,23 @@ Generator functions actually work in a completely different way compared to regu
 
 - Invoking a generator function returns a **generator object**, which is an iterator.
 - We can use the `yield` keyword in a generator function to "pause" the execution. 
+
+With generator functions, we can write something like this (`genFunc` is short for `generatorFunction`):
+
+```js
+function* genFunc() {
+
+  yield "✨";
+
+  console.log("First log!");
+
+  yield "💞";
+
+  console.log("Second log!");
+
+  return "Done!";
+
+}
+```
+
+The execution of the generator gets "paused" when it encounters a `yield` keyword. The next time we run the function,  it remembered where it previously paused, and runs from there on! 
