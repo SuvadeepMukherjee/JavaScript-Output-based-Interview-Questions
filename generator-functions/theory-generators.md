@@ -51,3 +51,11 @@ The `value` property is equal to the value that we yielded.
 Let's invoke the `next` method again! . First, we logged the string `First log!` to the console. This is neither a `yield` nor `return` keyword, so it continues! Then, it encountered a `yield` keyword with the value `'💕'`. An object gets *yielded* with the `value` property of `'💕'` and a `done` property. The value of the `done` property is `false`, since we haven't *returned* from the generator yet. 
 
 ![genobj-gif-3](../assets/genobj-gif-3.gif)
+
+Let's invoke `next` for the last time. 
+
+We logged the string `Second log!` to the console.  Then, it encountered a `return` keyword with the value `'Done!'`. An object gets returned with the `value` property of `'Done!'`. We actually *returned* this time, so the value of `done` is set to `true`! 
+
+The `done` property is actually very important. **We can only iterate a generator object \*once\*.** After that it simply returns `undefined` forever. In case you want to iterate it again, you just have to create a new generator object!
+
+![genObj-gif-4](../assets/genObj-gif-4.gif)
