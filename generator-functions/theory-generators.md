@@ -47,3 +47,7 @@ The `value` property is equal to the value that we yielded.
  The `done` property is a boolean value, which is only set to `true` once the generator function **returned** a value (not yielded! ). 
 
 ![gen-func-gif-2](../assets/gen-func-gif-2.gif)
+
+Let's invoke the `next` method again! . First, we logged the string `First log!` to the console. This is neither a `yield` nor `return` keyword, so it continues! Then, it encountered a `yield` keyword with the value `'💕'`. An object gets *yielded* with the `value` property of `'💕'` and a `done` property. The value of the `done` property is `false`, since we haven't *returned* from the generator yet. 
+
+![genobj-gif-3](../assets/genobj-gif-3.gif)
