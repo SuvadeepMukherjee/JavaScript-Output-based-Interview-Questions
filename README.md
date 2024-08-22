@@ -45,7 +45,7 @@
 | Strings                                            |        |
 | Object Oriented Programming                        | ✅      |
 | Call apply and bind                                | ✅      |
-| Increment and decrement operators                  |        |
+| Increment and decrement operators                  | ✅      |
 | data structures                                    |        |
 | events                                             |        |
 | iife                                               |        |
