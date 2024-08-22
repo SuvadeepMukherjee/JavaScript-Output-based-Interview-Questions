@@ -43,7 +43,7 @@
 | Web Storage APIs                                   | ✅      |
 | Type coercion , truthy ,falsy and short circuiting | ✅      |
 | Strings                                            |        |
-| Object Oriented Programming                        |        |
+| Object Oriented Programming                        | ✅      |
 | Call apply and bind                                |        |
 | Increment and decrement operators                  |        |
 | data structures                                    |        |
