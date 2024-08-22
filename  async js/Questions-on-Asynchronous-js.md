@@ -446,3 +446,45 @@ promise.then(function(value) {
 
 `Resolved`
 
+#### Q17:What is the output of the following code ? 
+
+```js
+let promise = new Promise(function (resolve, reject) {
+
+  setTimeout(() => resolve(1), 1000);
+
+});
+
+promise
+
+  .then(function (result) {
+
+    console.log(result);
+    return result + 2;
+
+  })
+
+  .then(function (result) {
+
+    console.log(result);
+
+    return result * 2;
+
+  })
+
+  .then(function (result) {
+
+    console.log(result);
+
+    return result * 2;
+
+  });
+```
+
+**Answer**:
+
+```
+1
+2
+4
+```
