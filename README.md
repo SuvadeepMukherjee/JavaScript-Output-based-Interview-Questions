@@ -39,7 +39,7 @@
 | Spread , rest and destructuring                    |        |
 | Currying                                           | ✅      |
 | Objects                                            | ✅      |
-| this keyword                                       |        |
+| this keyword                                       | ✅      |
 | Web Storage APIs                                   | ✅      |
 | Type coercion , truthy ,falsy and short circuiting |        |
 | Strings                                            |        |
