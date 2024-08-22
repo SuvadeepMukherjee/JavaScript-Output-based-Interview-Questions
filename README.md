@@ -44,7 +44,7 @@
 | Type coercion , truthy ,falsy and short circuiting | ✅      |
 | Strings                                            |        |
 | Object Oriented Programming                        | ✅      |
-| Call apply and bind                                |        |
+| Call apply and bind                                | ✅      |
 | Increment and decrement operators                  |        |
 | data structures                                    |        |
 | events                                             |        |
