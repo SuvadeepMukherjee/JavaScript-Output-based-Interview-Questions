@@ -37,7 +37,7 @@
 | Functions                                          | ✅      |
 | Closures                                           | ✅      |
 | Spread , rest and destructuring                    |        |
-| Currying                                           |        |
+| Currying                                           | ✅      |
 | Objects                                            |        |
 | this keyword                                       |        |
 | Web Storage APIs                                   |        |
