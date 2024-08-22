@@ -48,7 +48,7 @@
 | Increment and decrement operators                  | ✅      |
 | data structures                                    | ✅      |
 | events                                             | ✅      |
-| iife                                               | ✅      |
+| iife                                               |        |
 | Generator functions                                |        |
 | Modules                                            |        |
 | async js                                           | ✅      |
