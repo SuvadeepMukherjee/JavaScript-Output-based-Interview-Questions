@@ -38,7 +38,7 @@
 | Closures                                           | ✅      |
 | Spread , rest and destructuring                    |        |
 | Currying                                           | ✅      |
-| Objects                                            |        |
+| Objects                                            | ✅      |
 | this keyword                                       |        |
 | Web Storage APIs                                   |        |
 | Type coercion , truthy ,falsy and short circuiting |        |
