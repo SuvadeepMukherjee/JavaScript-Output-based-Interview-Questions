@@ -32,3 +32,7 @@ function* genFunc() {
 ```
 
 The execution of the generator gets "paused" when it encounters a `yield` keyword. The next time we run the function,  it remembers where it previously paused, and runs from there on! 
+
+The generator object contains a `next` method (on the  prototype chain). This method is what we'll use to iterate the generator object. 
+
+![gen-func-gif1](../assets/gen-func-gif1.gif)
