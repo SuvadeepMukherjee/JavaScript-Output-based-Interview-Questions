@@ -47,7 +47,7 @@
 | Call apply and bind                                | ✅      |
 | Increment and decrement operators                  | ✅      |
 | data structures                                    | ✅      |
-| events                                             |        |
+| events                                             | ✅      |
 | iife                                               |        |
 | Generator functions                                |        |
 | Modules                                            |        |
