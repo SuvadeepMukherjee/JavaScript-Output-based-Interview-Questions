@@ -402,3 +402,47 @@ taskPromise
 
 `Success 4`
 
+#### Q15:Given the following code, what will be the final output ? 
+
+```js
+const promise = new Promise((resolve) => {
+  resolve(1);
+});
+
+promise.then((value) => {
+  console.log(value);
+  return value + 1;
+}).then((value) => {
+  console.log(value);
+  throw new Error('Something went wrong');
+}).catch((error) => {
+  console.error(error.message);
+});
+```
+
+**Answer**:
+
+```
+1
+2
+Something went wrong
+```
+
+#### Q16:What is the output of the following code ? 
+
+```js
+var promise = new Promise(function(resolve, reject){
+    setTimeout(function() {
+        resolve('Resolved!');
+    }, 1000);
+});
+
+promise.then(function(value) {
+    console.log(value)
+});
+```
+
+**Answer**:
+
+`Resolved`
+
