@@ -31,4 +31,4 @@ function* genFunc() {
 }
 ```
 
-The execution of the generator gets "paused" when it encounters a `yield` keyword. The next time we run the function,  it remembered where it previously paused, and runs from there on! 
+The execution of the generator gets "paused" when it encounters a `yield` keyword. The next time we run the function,  it remembers where it previously paused, and runs from there on! 
