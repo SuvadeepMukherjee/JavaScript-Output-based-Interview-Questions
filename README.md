@@ -41,7 +41,7 @@
 | Objects                                            | ✅      |
 | this keyword                                       | ✅      |
 | Web Storage APIs                                   | ✅      |
-| Type coercion , truthy ,falsy and short circuiting |        |
+| Type coercion , truthy ,falsy and short circuiting | ✅      |
 | Strings                                            |        |
 | Object Oriented Programming                        |        |
 | Call apply and bind                                |        |
