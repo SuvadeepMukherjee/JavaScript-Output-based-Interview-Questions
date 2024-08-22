@@ -50,7 +50,7 @@
 | events                                             | ✅      |
 | iife                                               | ✅      |
 | Generator functions                                |        |
-| Modules                                            |        |
+| Modules                                            | ✅      |
 | async js                                           | ✅      |
 | Miscellenous topic                                 |        |
 
