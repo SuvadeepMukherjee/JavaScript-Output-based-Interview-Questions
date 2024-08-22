@@ -312,3 +312,20 @@ hello();
 
 - **Output** : "1" followed by "3", and then after a small delay, "2"
 - **Reason** : console.log("1") statement logs "1" to the console. Then setTimeout() function is set to execute the callback function in  the next event loop iteration and logs "3" to the console.
+
+#### Q12:Predict the output ? 
+
+```js
+const promise = new Promise((resolve, reject) => {
+  reject(Error('Error occurred'));
+});
+
+promise.catch(error => console.log(error.message));
+promise.catch(error => console.log(error.message));
+```
+
+**Answer**:
+
+`Error occurred`
+
+`Error occurred`
