@@ -35,7 +35,7 @@
 | let,const,var                                      | ✅      |
 | Arrays                                             |        |
 | Functions                                          | ✅      |
-| Closures                                           |        |
+| Closures                                           | ✅      |
 | Spread , rest and destructuring                    |        |
 | Currying                                           |        |
 | Objects                                            |        |
