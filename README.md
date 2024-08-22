@@ -40,7 +40,7 @@
 | Currying                                           | ✅      |
 | Objects                                            | ✅      |
 | this keyword                                       |        |
-| Web Storage APIs                                   |        |
+| Web Storage APIs                                   | ✅      |
 | Type coercion , truthy ,falsy and short circuiting |        |
 | Strings                                            |        |
 | Object Oriented Programming                        |        |
