@@ -36,3 +36,14 @@ The execution of the generator gets "paused" when it encounters a `yield` keywor
 The generator object contains a `next` method (on the  prototype chain). This method is what we'll use to iterate the generator object. 
 
 ![gen-func-gif1](../assets/gen-func-gif1.gif)
+
+when we invoke the `next` method on the `genObj` generator object! 
+
+The generator ran until it encountered the first `yield` keyword, which happened to be on the first line! It *yielded* an object containing a `value` property, and a `done` property.
+
+{ value: ... , done: ... }
+
+The `value` property is equal to the value that we yielded.
+ The `done` property is a boolean value, which is only set to `true` once the generator function **returned** a value (not yielded! ). 
+
+![gen-func-gif-2](../assets/gen-func-gif-2.gif)
