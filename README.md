@@ -33,7 +33,7 @@
 | Chapters                                           | Status |
 | -------------------------------------------------- | ------ |
 | let,const,var                                      | ✅      |
-| Arrays                                             |        |
+| Arrays                                             | ✅      |
 | Functions                                          | ✅      |
 | Closures                                           | ✅      |
 | Spread , rest and destructuring                    |        |
