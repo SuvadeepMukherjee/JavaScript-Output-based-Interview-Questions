@@ -36,7 +36,7 @@
 | Arrays                                             | ✅      |
 | Functions                                          | ✅      |
 | Closures                                           | ✅      |
-| Spread , rest and destructuring                    |        |
+| Spread , rest and destructuring                    | ✅      |
 | Currying                                           | ✅      |
 | Objects                                            | ✅      |
 | this keyword                                       | ✅      |
