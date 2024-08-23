@@ -109,11 +109,12 @@ function getUserBio([firstName] = []) {
   );
   return `My name is ${firstName}.`;
 }
+console.log(getUserBio())
 ```
 
 **Answer**:
 
-It will return `My name is undefined`
+It will return ``Do something else that does not need the destructuring parameter.`  `My name is undefined`
 
 #### Q9:What will be logged to the console ? 
 
