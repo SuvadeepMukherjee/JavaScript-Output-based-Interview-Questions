@@ -42,7 +42,7 @@
 | this keyword                                       | ✅      |
 | Web Storage APIs                                   | ✅      |
 | Type coercion , truthy ,falsy and short circuiting | ✅      |
-| Strings                                            |        |
+| Strings                                            | ✅      |
 | Object Oriented Programming                        | ✅      |
 | Call apply and bind                                | ✅      |
 | Increment and decrement operators                  | ✅      |
