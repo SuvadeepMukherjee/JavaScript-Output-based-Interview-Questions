@@ -1,4 +1,4 @@
-| Chapters                                           | Questions                                                    |
+| Chapters                                           | Question                                                     |
 | -------------------------------------------------- | ------------------------------------------------------------ |
 | let,const,var                                      | [Questions](https://github.com/SuvadeepMukherjee/JavaScript-Output-based-Interview-Questions/blob/main/let%2Cconst%2Cvar/Questions.md) |
 | Arrays                                             | [Questions](https://github.com/SuvadeepMukherjee/JavaScript-Output-based-Interview-Questions/blob/main/arrays/Questions-on-arrays.md) |
@@ -21,5 +21,4 @@
 | Modules                                            | [Questions](https://github.com/SuvadeepMukherjee/JavaScript-Output-based-Interview-Questions/blob/main/modules/Questions-on-modules.md) |
 | async js                                           | [Questions](https://github.com/SuvadeepMukherjee/JavaScript-Output-based-Interview-Questions/blob/main/%20async%20js/Questions-on-Asynchronous-js.md) |
 | Miscellenous topics                                | [Questions](https://github.com/SuvadeepMukherjee/JavaScript-Output-based-Interview-Questions/blob/main/miscellenous%20/Questions-on-miscellenous-topics.md) |
-
 
